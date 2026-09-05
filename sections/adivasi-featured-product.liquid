@@ -1,0 +1,459 @@
+{% comment %}
+  Adivasi Dedicated Single-Product Buy Section for Homepage
+  Ensures zero 404s, direct variant selection, and instant Cash on Delivery order action.
+{% endcomment %}
+
+<div class="adivasi-pdp-home section-{{ section.id }}-padding" id="AdivasiDirectBuySection">
+  <div class="page-width">
+    <div class="adivasi-pdp-home__grid">
+      <!-- Left: Real Gallery -->
+      <div class="adivasi-pdp-home__media">
+        <div class="adivasi-pdp-home__main-image-wrap">
+          <img
+            id="AdivasiMainProductImage"
+            src="https://cdn.shopify.com/s/files/1/0835/1957/0173/files/An_XIlT9GYEXOrEVOq3PF0ydGYR9eaupCWugOJI8gGmd1OhevHB-OrHouCNL-gafyvsAVaj9VG9mwnizFqctWrDETFe8NaN4gYw7v5ahQ0a81f2cHvCQ3FVO3hz22eGZ4qerfJtQpcuQbfLVm9QAoKyKlpTQMajGwp88tBQTlNKiSvYykQjL37T.webp?v=1786266995"
+            alt="Original Adivasi Hakki Pikki Hair Oil"
+            class="adivasi-pdp-home__main-img"
+            width="600"
+            height="600"
+            loading="eager"
+          >
+          <div class="adivasi-pdp-home__stamp-tag">3D HOLOGRAM VERIFIED</div>
+        </div>
+
+        <!-- Thumbnails -->
+        <div class="adivasi-pdp-home__thumbs">
+          <button type="button" class="adivasi-thumb is-active" onclick="switchProductThumb('https://cdn.shopify.com/s/files/1/0835/1957/0173/files/An_XIlT9GYEXOrEVOq3PF0ydGYR9eaupCWugOJI8gGmd1OhevHB-OrHouCNL-gafyvsAVaj9VG9mwnizFqctWrDETFe8NaN4gYw7v5ahQ0a81f2cHvCQ3FVO3hz22eGZ4qerfJtQpcuQbfLVm9QAoKyKlpTQMajGwp88tBQTlNKiSvYykQjL37T.webp?v=1786266995', this)">
+            <img src="https://cdn.shopify.com/s/files/1/0835/1957/0173/files/An_XIlT9GYEXOrEVOq3PF0ydGYR9eaupCWugOJI8gGmd1OhevHB-OrHouCNL-gafyvsAVaj9VG9mwnizFqctWrDETFe8NaN4gYw7v5ahQ0a81f2cHvCQ3FVO3hz22eGZ4qerfJtQpcuQbfLVm9QAoKyKlpTQMajGwp88tBQTlNKiSvYykQjL37T.webp?v=1786266995" alt="Bottle" width="70" height="70">
+          </button>
+          <button type="button" class="adivasi-thumb" onclick="switchProductThumb('https://cdn.shopify.com/s/files/1/0835/1957/0173/files/An_XethsT5Hxp-OPflX20DiS5SDqQCgSReCgyxVer-wTdRrL5hgtT-TBaycbHrAFb5DphsAN2_tPpyt4GsoL04iXQ6-FmnCKtRqrMaXBSny6dQg8OitZq6_oVSRMrJ8ngd9a6-yJ9Z2rKE8EvcaY34tgSlsM6Q3wHDTl1pky1od5X1F8VWsETel.webp?v=1786266995', this)">
+            <img src="https://cdn.shopify.com/s/files/1/0835/1957/0173/files/An_XethsT5Hxp-OPflX20DiS5SDqQCgSReCgyxVer-wTdRrL5hgtT-TBaycbHrAFb5DphsAN2_tPpyt4GsoL04iXQ6-FmnCKtRqrMaXBSny6dQg8OitZq6_oVSRMrJ8ngd9a6-yJ9Z2rKE8EvcaY34tgSlsM6Q3wHDTl1pky1od5X1F8VWsETel.webp?v=1786266995" alt="Herbs" width="70" height="70">
+          </button>
+          <button type="button" class="adivasi-thumb" onclick="switchProductThumb('https://cdn.shopify.com/s/files/1/0835/1957/0173/files/WhatsAppImage2024-04-23at5.10.00PM_1.webp?v=1786266995', this)">
+            <img src="https://cdn.shopify.com/s/files/1/0835/1957/0173/files/WhatsAppImage2024-04-23at5.10.00PM_1.webp?v=1786266995" alt="Founder" width="70" height="70">
+          </button>
+          <button type="button" class="adivasi-thumb" onclick="switchProductThumb('https://cdn.shopify.com/s/files/1/0835/1957/0173/files/WhatsApp_Image_2026-06-19_at_10.33.43.webp?v=1786266995', this)">
+            <img src="https://cdn.shopify.com/s/files/1/0835/1957/0173/files/WhatsApp_Image_2026-06-19_at_10.33.43.webp?v=1786266995" alt="Community" width="70" height="70">
+          </button>
+        </div>
+      </div>
+
+      <!-- Right: Direct Buy Options -->
+      <div class="adivasi-pdp-home__info">
+        <div class="adivasi-pdp-home__rating-row">
+          <span class="adivasi-stars">★★★★★</span>
+          <span class="adivasi-review-count">80.2K+ Verified Reviews &bull; Pakshirajapura Mysore</span>
+        </div>
+
+        <h2 class="adivasi-pdp-home__title">ORIGINAL ADIVASI HAKKI PIKKI HAIR OIL</h2>
+        <p class="adivasi-pdp-home__desc">
+          Formulated with 108 authentic forest herbs brewed over open woodfire for 12 hours. Penetrates deep into roots, controls hair fall in 14 days, and activates dormant follicles.
+        </p>
+
+        <!-- Pricing Row -->
+        <div class="adivasi-pdp-home__price-row">
+          <span class="adivasi-pdp-home__price" id="HomePdpPrice">₹1,299</span>
+          <span class="adivasi-pdp-home__compare" id="HomePdpCompare">₹2,799</span>
+          <span class="adivasi-pdp-home__discount-tag" id="HomePdpDiscount">SAVE 54%</span>
+        </div>
+
+        <!-- Bottle Size Selectors -->
+        <div class="adivasi-size-picker">
+          <label class="adivasi-size-picker__label">SELECT BOTTLE SIZE:</label>
+          <div class="adivasi-size-options">
+            <div class="adivasi-size-card" onclick="selectBottleSize(this, '250ml', 899, 1799, '50% OFF')">
+              <div class="adivasi-size-card__title">🔻 250 ML</div>
+              <div class="adivasi-size-card__subtitle">Starter Pack</div>
+              <div class="adivasi-size-card__price">₹899</div>
+            </div>
+
+            <div class="adivasi-size-card is-selected is-popular" onclick="selectBottleSize(this, '500ml', 1299, 2799, '54% OFF')">
+              <span class="adivasi-size-badge">MOST POPULAR</span>
+              <div class="adivasi-size-card__title">🔻 500 ML</div>
+              <div class="adivasi-size-card__subtitle">Full Regrowth Course</div>
+              <div class="adivasi-size-card__price">₹1,299</div>
+            </div>
+
+            <div class="adivasi-size-card" onclick="selectBottleSize(this, '1000ml', 2499, 4999, '50% OFF')">
+              <div class="adivasi-size-card__title">🔻 1000 ML</div>
+              <div class="adivasi-size-card__subtitle">Family Value Pack</div>
+              <div class="adivasi-size-card__price">₹2,499</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cash on Delivery CTA Button -->
+        <div class="adivasi-pdp-home__action-wrap">
+          <a
+            href="/products/original-adivasi-hakki-pikki-hair-oil"
+            class="adivasi-home-cod-btn"
+            id="HomeDirectCodBtn"
+            onclick="handleDirectHomeCod(event)"
+          >
+            <span class="adivasi-home-cod-btn__icon">📦</span>
+            <span class="adivasi-home-cod-btn__text">
+              <strong>ORDER NOW &mdash; CASH ON DELIVERY (COD)</strong>
+              <small>Zero Risk &bull; Pay Cash / UPI When You Receive Parcel</small>
+            </span>
+          </a>
+        </div>
+
+        <!-- Guarantee Row -->
+        <div class="adivasi-pdp-home__guarantees">
+          <div class="adivasi-guarantee">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Free Express Shipping Across India</span>
+          </div>
+          <div class="adivasi-guarantee">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>3-5 Days Doorstep Delivery</span>
+          </div>
+          <div class="adivasi-guarantee">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>7-Day Replacement Guarantee</span>
+          </div>
+        </div>
+
+        <!-- Trust Badges Render -->
+        {% render 'adivasi-trust-badges' %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .adivasi-pdp-home {
+    padding: 50px 0;
+    background: #ffffff;
+  }
+
+  .adivasi-pdp-home__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  .adivasi-pdp-home__main-image-wrap {
+    position: relative;
+    background: #fbf9f4;
+    border-radius: 12px;
+    border: 1.5px solid #ebdcc5;
+    overflow: hidden;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .adivasi-pdp-home__main-img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .adivasi-pdp-home__stamp-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: #0a3a2f;
+    color: #f6cb59;
+    border: 1px solid #c59b27;
+    font-size: 10.5px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  .adivasi-pdp-home__thumbs {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .adivasi-thumb {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    border: 1.5px solid #ebdcc5;
+    background: #fbf9f4;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 2px;
+    transition: border-color 0.2s;
+  }
+
+  .adivasi-thumb.is-active,
+  .adivasi-thumb:hover {
+    border-color: #0a3a2f;
+  }
+
+  .adivasi-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  /* Info Column */
+  .adivasi-pdp-home__rating-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .adivasi-stars {
+    color: #f59e0b;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+
+  .adivasi-review-count {
+    font-size: 12.5px;
+    color: #4b5563;
+    font-weight: 600;
+  }
+
+  .adivasi-pdp-home__title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #0a3a2f;
+    margin: 0 0 10px;
+    line-height: 1.25;
+  }
+
+  .adivasi-pdp-home__desc {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.5;
+    margin: 0 0 18px;
+  }
+
+  .adivasi-pdp-home__price-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    background: #fbf9f4;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #ebdcc5;
+  }
+
+  .adivasi-pdp-home__price {
+    font-size: 26px;
+    font-weight: 900;
+    color: #0a3a2f;
+  }
+
+  .adivasi-pdp-home__compare {
+    font-size: 15px;
+    color: #9ca3af;
+    text-decoration: line-through;
+  }
+
+  .adivasi-pdp-home__discount-tag {
+    background: #dc2626;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  /* Size Cards */
+  .adivasi-size-picker__label {
+    display: block;
+    font-size: 12px;
+    font-weight: 800;
+    color: #0a3a2f;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .adivasi-size-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .adivasi-size-card {
+    position: relative;
+    border: 1.5px solid #d1d5db;
+    border-radius: 10px;
+    padding: 12px 10px;
+    cursor: pointer;
+    background: #ffffff;
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  .adivasi-size-card:hover,
+  .adivasi-size-card.is-selected {
+    border-color: #0a3a2f;
+    background: #f4fbf6;
+    box-shadow: 0 4px 12px rgba(10, 58, 47, 0.1);
+  }
+
+  .adivasi-size-card.is-popular {
+    border-color: #c59b27;
+  }
+
+  .adivasi-size-badge {
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #c59b27;
+    color: #ffffff;
+    font-size: 8.5px;
+    font-weight: 800;
+    padding: 1px 7px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+
+  .adivasi-size-card__title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #0a3a2f;
+  }
+
+  .adivasi-size-card__subtitle {
+    font-size: 10px;
+    color: #6b7280;
+    margin: 2px 0 4px;
+  }
+
+  .adivasi-size-card__price {
+    font-size: 14px;
+    font-weight: 800;
+    color: #16a34a;
+  }
+
+  /* CTA Button */
+  .adivasi-home-cod-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 100%;
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-family: inherit;
+    box-shadow: 0 6px 20px rgba(22, 163, 74, 0.45);
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: adivasi-pdp-pulse 2s infinite;
+  }
+
+  @keyframes adivasi-pdp-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7); }
+    50% { box-shadow: 0 0 0 8px rgba(22, 163, 74, 0); }
+  }
+
+  .adivasi-home-cod-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(22, 163, 74, 0.6);
+  }
+
+  .adivasi-home-cod-btn__icon {
+    font-size: 24px;
+  }
+
+  .adivasi-home-cod-btn__text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .adivasi-home-cod-btn__text strong {
+    font-size: 15px;
+    letter-spacing: 0.5px;
+  }
+
+  .adivasi-home-cod-btn__text small {
+    font-size: 11px;
+    color: #dcfce7;
+  }
+
+  .adivasi-pdp-home__guarantees {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 16px 0 20px;
+    font-size: 12px;
+    color: #374151;
+    font-weight: 600;
+  }
+
+  .adivasi-guarantee {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  @media (max-width: 850px) {
+    .adivasi-pdp-home__grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .adivasi-pdp-home__title {
+      font-size: 22px;
+    }
+    .adivasi-pdp-home__main-img {
+      max-height: 280px;
+    }
+  }
+</style>
+
+<script>
+  function switchProductThumb(src, btn) {
+    const mainImg = document.getElementById('AdivasiMainProductImage');
+    if (mainImg) mainImg.src = src;
+    document.querySelectorAll('.adivasi-thumb').forEach(t => t.classList.remove('is-active'));
+    if (btn) btn.classList.add('is-active');
+  }
+
+  function selectBottleSize(card, size, price, compare, discount) {
+    document.querySelectorAll('.adivasi-size-card').forEach(c => c.classList.remove('is-selected'));
+    card.classList.add('is-selected');
+
+    const priceEl = document.getElementById('HomePdpPrice');
+    const compareEl = document.getElementById('HomePdpCompare');
+    const discountEl = document.getElementById('HomePdpDiscount');
+
+    if (priceEl) priceEl.textContent = '₹' + price.toLocaleString('en-IN');
+    if (compareEl) compareEl.textContent = '₹' + compare.toLocaleString('en-IN');
+    if (discountEl) discountEl.textContent = discount;
+  }
+
+  function handleDirectHomeCod(e) {
+    // Try triggering EasySell popup if active
+    const easysellBtn = document.querySelector('.easysell-order-now, [data-easysell-btn], .fastrr-buy-now');
+    if (easysellBtn) {
+      e.preventDefault();
+      easysellBtn.click();
+      return;
+    }
+    // Otherwise it navigates cleanly to the product page without 404
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Adivasi Direct Buy Box",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Adivasi Direct Buy Box"
+    }
+  ]
+}
+{% endschema %}

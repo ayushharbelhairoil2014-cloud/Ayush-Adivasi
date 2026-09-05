@@ -405,7 +405,7 @@
     {% comment %} Adivasi Store Modular Conversion Snippets {% endcomment %}
     {% render 'adivasi-sales-popup' %}
     {% render 'adivasi-exit-popup' %}
-    {% if template.name == 'product' %}
+    {% if template.name == 'product' or template.name == 'index' %}
       {% render 'adivasi-sticky-checkout' %}
     {% endif %}
   </body>

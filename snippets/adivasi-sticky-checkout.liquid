@@ -4,15 +4,27 @@
   Provides instant 1-Click COD action with active product/variant price and discount.
 {% endcomment %}
 
-{% if template.name == 'product' and product != blank %}
+{% assign current_product = product | default: all_products['original-adivasi-hakki-pikki-hair-oil'] %}
+{% if current_product != blank %}
   <div class="adivasi-sticky-bar" id="AdivasiStickyBar" aria-hidden="true">
     <div class="adivasi-sticky-bar__inner">
       <div class="adivasi-sticky-bar__product-info">
-        {% if product.featured_image %}
+        {% if current_product.featured_image %}
           <div class="adivasi-sticky-bar__img-wrapper">
             <img
-              src="{{ product.featured_image | image_url: width: 120 }}"
-              alt="{{ product.title | escape }}"
+              src="{{ current_product.featured_image | image_url: width: 120 }}"
+              alt="{{ current_product.title | escape }}"
+              width="50"
+              height="50"
+              loading="lazy"
+              class="adivasi-sticky-bar__img"
+            >
+          </div>
+        {% else %}
+          <div class="adivasi-sticky-bar__img-wrapper">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0835/1957/0173/files/An_XIlT9GYEXOrEVOq3PF0ydGYR9eaupCWugOJI8gGmd1OhevHB-OrHouCNL-gafyvsAVaj9VG9mwnizFqctWrDETFe8NaN4gYw7v5ahQ0a81f2cHvCQ3FVO3hz22eGZ4qerfJtQpcuQbfLVm9QAoKyKlpTQMajGwp88tBQTlNKiSvYykQjL37T.webp?v=1786266995"
+              alt="Adivasi Oil"
               width="50"
               height="50"
               loading="lazy"
@@ -21,20 +33,14 @@
           </div>
         {% endif %}
         <div class="adivasi-sticky-bar__meta">
-          <span class="adivasi-sticky-bar__title">{{ product.title | truncate: 28 }}</span>
+          <span class="adivasi-sticky-bar__title">{{ current_product.title | truncate: 26 }}</span>
           <div class="adivasi-sticky-bar__price-row">
             <span class="adivasi-sticky-bar__price" id="AdivasiStickyPrice">
-              {{ product.selected_or_first_available_variant.price | money }}
+              {{ current_product.selected_or_first_available_variant.price | default: 89900 | money }}
             </span>
-            {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
-              <span class="adivasi-sticky-bar__compare-price" id="AdivasiStickyComparePrice">
-                {{ product.selected_or_first_available_variant.compare_at_price | money }}
-              </span>
-              {% assign savings = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | times: 100.0 | divided_by: product.selected_or_first_available_variant.compare_at_price | round %}
-              <span class="adivasi-sticky-bar__badge" id="AdivasiStickyBadge">
-                {{ savings }}% OFF
-              </span>
-            {% endif %}
+            <span class="adivasi-sticky-bar__badge" id="AdivasiStickyBadge">
+              50% OFF
+            </span>
           </div>
         </div>
       </div>

@@ -4,71 +4,54 @@
       "type": "adivasi-hero-banner",
       "settings": {
         "bg_color": "#0A3A2F",
-        "badge_text": "100% ORIGINAL PAKSHIRAJAPURA HERITAGE • MYSORE",
-        "heading": "Revive Thick, Dense Hair With Ancestral 108 Wild Forest Herbs",
-        "subheading": "Hand-harvested in dense Western Ghats by our tribal elders & slow woodfire brewed for 12 hours. Halts severe hair fall within 14 days and stimulates baby hair regrowth without chemicals.",
-        "cta_link": "shopify://collections/all",
-        "secondary_cta_link": "shopify://collections/all"
+        "badge_text": "100% ORIGINAL PAKSHIRAJAPURA AYUSH HERBAL",
+        "product_image": "https://cdn.shopify.com/s/files/1/0835/1957/0173/files/An_XIlT9GYEXOrEVOq3PF0ydGYR9eaupCWugOJI8gGmd1OhevHB-OrHouCNL-gafyvsAVaj9VG9mwnizFqctWrDETFe8NaN4gYw7v5ahQ0a81f2cHvCQ3FVO3hz22eGZ4qerfJtQpcuQbfLVm9QAoKyKlpTQMajGwp88tBQTlNKiSvYykQjL37T.webp?v=1786266995",
+        "cta_link": "/products/original-adivasi-hakki-pikki-hair-oil"
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "featured_product": {
+      "type": "adivasi-featured-product",
+      "settings": {}
+    },
+    "heritage_story": {
+      "type": "adivasi-heritage-story",
+      "settings": {}
+    },
+    "ingredients_spotlight": {
+      "type": "adivasi-ingredients-spotlight",
       "settings": {
-        "title": "Best-Selling Authentic Herbal Formulations",
-        "heading_size": "h2",
-        "description": "Direct from our tribal forest community in Pakshirajapura, Mysore. Available on Cash on Delivery.",
-        "show_description": true,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": true,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 44,
-        "padding_bottom": 44
+        "bg_color": "#FFFFFF",
+        "cta_link": "/products/original-adivasi-hakki-pikki-hair-oil"
       }
     },
     "herbal_process": {
       "type": "adivasi-herbal-process",
       "settings": {
         "bg_color": "#FBF9F4",
-        "cta_link": "shopify://collections/all"
-      }
-    },
-    "ingredients_spotlight": {
-      "type": "adivasi-ingredients-spotlight",
-      "settings": {
-        "bg_color": "#FFFFFF",
-        "cta_link": "shopify://collections/all"
+        "cta_link": "/products/original-adivasi-hakki-pikki-hair-oil"
       }
     },
     "customer_reels": {
       "type": "adivasi-video-reels",
       "settings": {
-        "bg_color": "#FBF9F4",
-        "cta_link": "shopify://collections/all"
+        "bg_color": "#FFFFFF",
+        "cta_link": "/products/original-adivasi-hakki-pikki-hair-oil"
       }
     },
     "faq_accordion": {
       "type": "adivasi-faq-accordion",
       "settings": {
-        "bg_color": "#FFFFFF",
-        "cta_link": "shopify://collections/all"
+        "bg_color": "#FBF9F4",
+        "cta_link": "/products/original-adivasi-hakki-pikki-hair-oil"
       }
     }
   },
   "order": [
     "hero_banner",
-    "featured_collection",
-    "herbal_process",
+    "featured_product",
+    "heritage_story",
     "ingredients_spotlight",
+    "herbal_process",
     "customer_reels",
     "faq_accordion"
   ]
