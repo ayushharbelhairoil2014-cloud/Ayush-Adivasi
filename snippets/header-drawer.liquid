@@ -10,6 +10,175 @@
 {% enddoc %}
 
 <header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
+  <style>
+    /* ========================================================
+       AYUSH ADIVASI LUXURY MOBILE MENU DRAWER
+       ======================================================== */
+    /* 1. Backdrop Dimming Overlay (Full Screen Blur) */
+    header-drawer details[open] summary::before,
+    header-drawer details.menu-opening summary::before,
+    details[open].menu-drawer-container::before {
+      content: '' !important;
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      background: rgba(0, 0, 0, 0.72) !important;
+      backdrop-filter: blur(5px) !important;
+      -webkit-backdrop-filter: blur(5px) !important;
+      z-index: 9998 !important;
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+    }
+
+    /* 2. Menu Drawer Container (Solid Deep Forest Emerald Gradient) */
+    #menu-drawer.menu-drawer {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      bottom: 0 !important;
+      height: 100vh !important;
+      height: 100dvh !important;
+      width: 85vw !important;
+      max-width: 340px !important;
+      min-width: 280px !important;
+      background: #051c17 !important;
+      background: linear-gradient(180deg, #041814 0%, #06261f 50%, #0a3a2f 100%) !important;
+      color: #ffffff !important;
+      border-right: 2px solid #c59b27 !important;
+      box-shadow: 12px 0 36px rgba(0, 0, 0, 0.75) !important;
+      z-index: 9999 !important;
+      transform: translateX(-100%) !important;
+      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s ease !important;
+      visibility: hidden !important;
+      display: flex !important;
+      flex-direction: column !important;
+      overflow-y: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Open State */
+    details[open] #menu-drawer.menu-drawer,
+    details[open].menu-opening #menu-drawer.menu-drawer {
+      transform: translateX(0) !important;
+      visibility: visible !important;
+    }
+
+    /* 3. Branded Drawer Top Bar */
+    .adivasi-drawer-top {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 16px 18px !important;
+      background: rgba(0, 0, 0, 0.3) !important;
+      border-bottom: 1.5px solid rgba(197, 155, 39, 0.3) !important;
+      flex-shrink: 0 !important;
+    }
+
+    .adivasi-drawer-branding {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+    }
+
+    .adivasi-drawer-herb-icon {
+      font-size: 22px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      background: rgba(197, 155, 39, 0.2) !important;
+      border: 1.5px solid #c59b27 !important;
+      border-radius: 50% !important;
+      width: 38px !important;
+      height: 38px !important;
+    }
+
+    .adivasi-drawer-title-group {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    .adivasi-drawer-main-title {
+      font-size: 14.5px !important;
+      font-weight: 800 !important;
+      color: #ffffff !important;
+      letter-spacing: 0.8px !important;
+      text-transform: uppercase !important;
+    }
+
+    .adivasi-drawer-sub-title {
+      font-size: 11px !important;
+      color: #f6cb59 !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.3px !important;
+    }
+
+    .adivasi-drawer-close-btn {
+      background: rgba(255, 255, 255, 0.12) !important;
+      border: 1px solid rgba(255, 255, 255, 0.25) !important;
+      color: #ffffff !important;
+      width: 32px !important;
+      height: 32px !important;
+      border-radius: 50% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 14px !important;
+      font-weight: 700 !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .adivasi-drawer-close-btn:hover {
+      background: #c59b27 !important;
+      color: #06261f !important;
+      border-color: #c59b27 !important;
+      transform: scale(1.08);
+    }
+
+    /* 4. Drawer Menu Links */
+    .menu-drawer__navigation {
+      padding: 8px 0 !important;
+    }
+
+    .menu-drawer__menu li {
+      margin: 0 !important;
+      border-bottom: 1px solid rgba(197, 155, 39, 0.14) !important;
+    }
+
+    .menu-drawer__menu-item,
+    .menu-drawer__menu-item.list-menu__item {
+      color: #ffffff !important;
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.3px !important;
+      padding: 14px 20px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      text-decoration: none !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .menu-drawer__menu-item:hover,
+    .menu-drawer__menu-item:active,
+    .menu-drawer__menu-item--active {
+      background: rgba(197, 155, 39, 0.18) !important;
+      color: #f6cb59 !important;
+      padding-left: 24px !important;
+    }
+
+    .menu-drawer__menu-item span.svg-wrapper {
+      color: #c59b27 !important;
+    }
+  </style>
+
   <details id="Details-menu-drawer-container" class="menu-drawer-container">
     <summary
       class="header__icon header__icon--menu header__icon--summary link focus-inset"
@@ -21,6 +190,25 @@
       </span>
     </summary>
     <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
+      <!-- Branded Header inside Drawer -->
+      <div class="adivasi-drawer-top">
+        <div class="adivasi-drawer-branding">
+          <span class="adivasi-drawer-herb-icon">🌿</span>
+          <div class="adivasi-drawer-title-group">
+            <span class="adivasi-drawer-main-title">AYUSH ADIVASI</span>
+            <span class="adivasi-drawer-sub-title">Authentic Mysore Hair Oil</span>
+          </div>
+        </div>
+        <button
+          type="button"
+          class="adivasi-drawer-close-btn"
+          aria-label="Close menu"
+          onclick="document.getElementById('Details-menu-drawer-container').removeAttribute('open'); document.getElementById('Details-menu-drawer-container').classList.remove('menu-opening'); document.body.classList.remove('overflow-hidden-tablet', 'overflow-hidden-desktop');"
+        >
+          ✕
+        </button>
+      </div>
+
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
