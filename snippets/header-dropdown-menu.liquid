@@ -5,7 +5,7 @@
 
 <nav class="header__inline-menu adivasi-nav">
   <ul class="list-menu list-menu--inline" role="list">
-    {%- if section.settings.menu.links != blank and section.settings.menu.links.size > 0 -%}
+    {%- if section.settings.menu.links != blank and section.settings.menu.links.size > 2 -%}
       {%- for link in section.settings.menu.links -%}
         {%- assign dest_url = link.url -%}
         {%- if dest_url contains '/collections/all' or dest_url == '#' or dest_url contains '/collections/' and dest_url != '/collections/frontpage' -%}
@@ -115,7 +115,7 @@
         </li>
       {%- endfor -%}
     {%- else -%}
-      <!-- Premium Fallback Navigation Menu -->
+      <!-- Premium Authentic Navigation Menu Items -->
       <li>
         <a href="/" class="header__menu-item list-menu__item link link--text focus-inset adivasi-nav__link">
           <span>Home</span>
@@ -124,7 +124,7 @@
       <li>
         <a href="/products/original-adivasi-hakki-pikki-hair-oil" class="header__menu-item list-menu__item link link--text focus-inset adivasi-nav__link is-featured">
           <span>🌿 Shop Hair Oil</span>
-          <span class="adivasi-nav__pill">HOT</span>
+          <span class="adivasi-nav__pill">50% OFF</span>
         </a>
       </li>
       <li>
@@ -134,7 +134,7 @@
       </li>
       <li>
         <a href="/#herbs-spotlight" class="header__menu-item list-menu__item link link--text focus-inset adivasi-nav__link">
-          <span>108 Wild Herbs</span>
+          <span>108 Sacred Herbs</span>
         </a>
       </li>
       <li>
@@ -162,6 +162,7 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
+    flex-wrap: nowrap;
   }
 
   .adivasi-nav__link {
@@ -174,34 +175,56 @@
     text-transform: uppercase !important;
     padding: 8px 14px !important;
     border-radius: 6px !important;
-    color: #ffffff !important;
+    color: #0a3a2f !important;
     transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
     position: relative;
+    text-decoration: none !important;
+  }
+
+  .color-scheme-4 .adivasi-nav__link,
+  .color-scheme-5 .adivasi-nav__link {
+    color: #ffffff !important;
   }
 
   .adivasi-nav__link span {
     transition: color 0.2s ease;
+    color: inherit;
   }
 
   .adivasi-nav__link:hover {
-    color: #f6cb59 !important;
-    background: rgba(255, 255, 255, 0.08);
+    color: #c59b27 !important;
+    background: rgba(10, 58, 47, 0.07) !important;
     transform: translateY(-1px);
   }
 
-  .adivasi-nav__link:hover span {
+  .color-scheme-4 .adivasi-nav__link:hover,
+  .color-scheme-5 .adivasi-nav__link:hover {
     color: #f6cb59 !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .adivasi-nav__link:hover span {
+    color: #c59b27 !important;
     text-decoration: none !important;
   }
 
+  .color-scheme-4 .adivasi-nav__link:hover span,
+  .color-scheme-5 .adivasi-nav__link:hover span {
+    color: #f6cb59 !important;
+  }
+
   .adivasi-nav__link.is-featured {
+    color: #0a3a2f !important;
+  }
+  .color-scheme-4 .adivasi-nav__link.is-featured,
+  .color-scheme-5 .adivasi-nav__link.is-featured {
     color: #f6cb59 !important;
   }
 
   /* Hot/Sale pill on nav item */
   .adivasi-nav__pill {
     background: #16a34a;
-    color: #ffffff;
+    color: #ffffff !important;
     font-size: 9px;
     font-weight: 800;
     padding: 2px 6px;

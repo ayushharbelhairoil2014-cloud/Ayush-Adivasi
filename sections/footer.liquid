@@ -87,7 +87,7 @@
                       {{ block.settings.subtext }}
                     </div>
                   {%- when 'link_list' -%}
-                    {%- if block.settings.menu != blank and block.settings.menu.links.size > 0 -%}
+                    {%- if block.settings.menu != blank and block.settings.menu.links.size > 2 -%}
                       <ul class="footer-block__details-content list-unstyled">
                         {%- for link in block.settings.menu.links -%}
                           {%- assign f_url = link.url -%}
