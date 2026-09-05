@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main_how_to_use": {
+      "type": "adivasi-how-to-use",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main_how_to_use"
+  ]
+}

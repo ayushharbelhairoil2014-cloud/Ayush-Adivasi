@@ -1,0 +1,251 @@
+{% comment %}
+  Adivasi Mobile Sticky Checkout Bar
+  Shows up when user scrolls past the main buy box on mobile.
+  Provides instant 1-Click COD action with active product/variant price and discount.
+{% endcomment %}
+
+{% if template.name == 'product' and product != blank %}
+  <div class="adivasi-sticky-bar" id="AdivasiStickyBar" aria-hidden="true">
+    <div class="adivasi-sticky-bar__inner">
+      <div class="adivasi-sticky-bar__product-info">
+        {% if product.featured_image %}
+          <div class="adivasi-sticky-bar__img-wrapper">
+            <img
+              src="{{ product.featured_image | image_url: width: 120 }}"
+              alt="{{ product.title | escape }}"
+              width="50"
+              height="50"
+              loading="lazy"
+              class="adivasi-sticky-bar__img"
+            >
+          </div>
+        {% endif %}
+        <div class="adivasi-sticky-bar__meta">
+          <span class="adivasi-sticky-bar__title">{{ product.title | truncate: 28 }}</span>
+          <div class="adivasi-sticky-bar__price-row">
+            <span class="adivasi-sticky-bar__price" id="AdivasiStickyPrice">
+              {{ product.selected_or_first_available_variant.price | money }}
+            </span>
+            {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+              <span class="adivasi-sticky-bar__compare-price" id="AdivasiStickyComparePrice">
+                {{ product.selected_or_first_available_variant.compare_at_price | money }}
+              </span>
+              {% assign savings = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | times: 100.0 | divided_by: product.selected_or_first_available_variant.compare_at_price | round %}
+              <span class="adivasi-sticky-bar__badge" id="AdivasiStickyBadge">
+                {{ savings }}% OFF
+              </span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="adivasi-sticky-bar__action">
+        <button
+          type="button"
+          class="adivasi-sticky-bar__btn"
+          id="AdivasiStickyCodBtn"
+          onclick="triggerStickyCod()"
+        >
+          <span class="adivasi-sticky-bar__btn-icon">📦</span>
+          <span class="adivasi-sticky-bar__btn-text">ORDER COD</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .adivasi-sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #ffffff;
+      border-top: 1.5px solid #0a3a2f;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+      z-index: 9999;
+      transform: translateY(115%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .adivasi-sticky-bar.is-visible {
+      transform: translateY(0);
+    }
+
+    .adivasi-sticky-bar__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 600px;
+      margin: 0 auto;
+      gap: 12px;
+    }
+
+    .adivasi-sticky-bar__product-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .adivasi-sticky-bar__img-wrapper {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #fbf9f4;
+      border: 1px solid #e7dfd5;
+    }
+
+    .adivasi-sticky-bar__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .adivasi-sticky-bar__meta {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .adivasi-sticky-bar__title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1a2421;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.2;
+    }
+
+    .adivasi-sticky-bar__price-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 3px;
+    }
+
+    .adivasi-sticky-bar__price {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #0a3a2f;
+    }
+
+    .adivasi-sticky-bar__compare-price {
+      font-size: 11.5px;
+      color: #888888;
+      text-decoration: line-through;
+    }
+
+    .adivasi-sticky-bar__badge {
+      background: #dc2626;
+      color: #ffffff;
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 4px;
+    }
+
+    .adivasi-sticky-bar__action {
+      flex-shrink: 0;
+    }
+
+    .adivasi-sticky-bar__btn {
+      background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+      color: #ffffff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 3px 10px rgba(22, 163, 74, 0.4);
+      animation: adivasi-sticky-pulse 2.2s infinite;
+      white-space: nowrap;
+    }
+
+    @keyframes adivasi-sticky-pulse {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
+      }
+      50% {
+        box-shadow: 0 0 0 7px rgba(22, 163, 74, 0);
+      }
+    }
+
+    @media (min-width: 990px) {
+      .adivasi-sticky-bar {
+        /* Can display neatly on desktop as well or mobile focus */
+        padding: 12px 24px;
+      }
+      .adivasi-sticky-bar__inner {
+        max-width: 900px;
+      }
+    }
+  </style>
+
+  <script>
+    (function () {
+      function initStickyBar() {
+        const bar = document.getElementById('AdivasiStickyBar');
+        if (!bar) return;
+
+        // Find product form or main add to cart button
+        const mainBuyArea = document.querySelector('.product-form__submit, [name="add"], .adivasi-cod-btn');
+
+        if (!mainBuyArea) return;
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+              bar.classList.add('is-visible');
+              bar.setAttribute('aria-hidden', 'false');
+            } else {
+              bar.classList.remove('is-visible');
+              bar.setAttribute('aria-hidden', 'true');
+            }
+          });
+        }, {
+          root: null,
+          threshold: 0
+        });
+
+        observer.observe(mainBuyArea);
+      }
+
+      window.triggerStickyCod = function () {
+        // Try EasySell / COD app triggers first
+        const codModalBtn = document.querySelector('.easysell-order-now, [data-easysell-btn], .fastrr-buy-now, [data-fastrr-button]');
+        if (codModalBtn) {
+          codModalBtn.click();
+          return;
+        }
+
+        const mainCodBtn = document.querySelector('.adivasi-cod-btn');
+        if (mainCodBtn) {
+          mainCodBtn.click();
+          return;
+        }
+
+        const formSubmit = document.querySelector('.product-form__submit');
+        if (formSubmit) {
+          formSubmit.click();
+          setTimeout(() => { window.location.href = '/checkout'; }, 500);
+        }
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initStickyBar);
+      } else {
+        initStickyBar();
+      }
+    })();
+  </script>
+{% endif %}

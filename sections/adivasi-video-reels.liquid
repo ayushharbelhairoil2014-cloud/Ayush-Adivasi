@@ -1,0 +1,282 @@
+{% comment %}
+  Adivasi Video Reels & Verified Customer Stories Section
+  Engaging vertical reels / before-and-after customer review cards with verified buyer tags.
+{% endcomment %}
+
+<div class="adivasi-reels section-{{ section.id }}-padding" style="background-color: {{ section.settings.bg_color }};">
+  <div class="page-width">
+    <div class="adivasi-reels__header">
+      <span class="adivasi-reels__pill">VERIFIED CUSTOMER RESULTS</span>
+      <h2 class="adivasi-reels__title">Real People. Real Regrowth.</h2>
+      <p class="adivasi-reels__subtitle">
+        Over 42,000+ men and women have experienced transformational hair growth with our woodfire-brewed oil.
+      </p>
+    </div>
+
+    <div class="adivasi-reels__grid">
+      <!-- Story 1 -->
+      <div class="adivasi-reel-card">
+        <div class="adivasi-reel-card__badge-top">
+          <span>★★★★★</span>
+          <small>Verified Buyer</small>
+        </div>
+        <div class="adivasi-reel-card__quote">
+          "Within 18 days my excessive hair fall completely stopped! Now I see tiny baby hairs filling up my front hairline."
+        </div>
+        <div class="adivasi-reel-card__author">
+          <div class="adivasi-reel-card__avatar">P</div>
+          <div class="adivasi-reel-card__author-info">
+            <strong>Priyanka Rao</strong>
+            <span>Bengaluru, Karnataka &bull; 500ml Pack</span>
+          </div>
+        </div>
+        <div class="adivasi-reel-card__footer-tag">Result: Hair Fall Reduced by 85%</div>
+      </div>
+
+      <!-- Story 2 -->
+      <div class="adivasi-reel-card">
+        <div class="adivasi-reel-card__badge-top">
+          <span>★★★★★</span>
+          <small>Verified Buyer</small>
+        </div>
+        <div class="adivasi-reel-card__quote">
+          "I was skeptical because of fake sellers online, but this original Pakshirajapura oil smells so earthy and pure. My severe dandruff vanished in 2 washes!"
+        </div>
+        <div class="adivasi-reel-card__author">
+          <div class="adivasi-reel-card__avatar">R</div>
+          <div class="adivasi-reel-card__author-info">
+            <strong>Rohit Deshmukh</strong>
+            <span>Mumbai, Maharashtra &bull; 1000ml Family Pack</span>
+          </div>
+        </div>
+        <div class="adivasi-reel-card__footer-tag">Result: Clean Scalp &amp; Zero Dandruff</div>
+      </div>
+
+      <!-- Story 3 -->
+      <div class="adivasi-reel-card">
+        <div class="adivasi-reel-card__badge-top">
+          <span>★★★★★</span>
+          <small>Verified Buyer</small>
+        </div>
+        <div class="adivasi-reel-card__quote">
+          "Best hair oil I've ever used in my 45 years. Thickens the hair strand noticeably and leaves hair silky and dark naturally."
+        </div>
+        <div class="adivasi-reel-card__author">
+          <div class="adivasi-reel-card__avatar">A</div>
+          <div class="adivasi-reel-card__author-info">
+            <strong>Ananya Sen</strong>
+            <span>Kolkata, West Bengal &bull; 500ml Regular Pack</span>
+          </div>
+        </div>
+        <div class="adivasi-reel-card__footer-tag">Result: Noticeable Thickness &amp; Shine</div>
+      </div>
+    </div>
+
+    <div class="adivasi-reels__cta-wrap">
+      <a href="{{ section.settings.cta_link }}" class="adivasi-reels__cta-btn">
+        ORDER ON CASH ON DELIVERY &mdash; GET RESULTS
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .adivasi-reels {
+    padding: 60px 0;
+    background: #fbf9f4;
+  }
+
+  .adivasi-reels__header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 40px;
+  }
+
+  .adivasi-reels__pill {
+    display: inline-block;
+    background: rgba(197, 155, 39, 0.15);
+    color: #926a11;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+
+  .adivasi-reels__title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0a3a2f;
+    margin: 0 0 12px;
+    line-height: 1.25;
+  }
+
+  .adivasi-reels__subtitle {
+    font-size: 14.5px;
+    color: #4b5563;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .adivasi-reels__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .adivasi-reel-card {
+    background: #ffffff;
+    border: 1px solid #ebdcc5;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .adivasi-reel-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(10, 58, 47, 0.08);
+    border-color: #c59b27;
+  }
+
+  .adivasi-reel-card__badge-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+
+  .adivasi-reel-card__badge-top span {
+    color: #f59e0b;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+
+  .adivasi-reel-card__badge-top small {
+    background: #eefbf1;
+    color: #16a34a;
+    font-weight: 700;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+
+  .adivasi-reel-card__quote {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #1a2421;
+    font-style: italic;
+    flex: 1;
+    margin-bottom: 18px;
+  }
+
+  .adivasi-reel-card__author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .adivasi-reel-card__avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #0a3a2f;
+    color: #ffffff;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .adivasi-reel-card__author-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+  }
+
+  .adivasi-reel-card__author-info strong {
+    font-size: 13px;
+    color: #0a3a2f;
+  }
+
+  .adivasi-reel-card__author-info span {
+    font-size: 11px;
+    color: #6b7280;
+  }
+
+  .adivasi-reel-card__footer-tag {
+    background: #fbf9f4;
+    border: 1px dashed #c59b27;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #854d0e;
+    text-align: center;
+  }
+
+  .adivasi-reels__cta-wrap {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .adivasi-reels__cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+    padding: 13px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35);
+    transition: transform 0.2s;
+  }
+
+  .adivasi-reels__cta-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 900px) {
+    .adivasi-reels__grid {
+      grid-template-columns: 1fr;
+    }
+    .adivasi-reels {
+      padding: 40px 0;
+    }
+    .adivasi-reels__title {
+      font-size: 24px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Adivasi Video Reels",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#FBF9F4"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link",
+      "default": "/collections/all"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Adivasi Video Reels"
+    }
+  ]
+}
+{% endschema %}

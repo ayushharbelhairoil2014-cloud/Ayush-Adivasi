@@ -1,0 +1,187 @@
+{% comment %}
+  Adivasi Real-Time Sales Notification Popup
+  Lightweight, verified buyer notification toasts rotating every 14-20 seconds.
+  Stored in sessionStorage, fully dismissible, mobile-optimized.
+{% endcomment %}
+
+<div class="adivasi-sales-toast" id="AdivasiSalesToast" aria-live="polite">
+  <button type="button" class="adivasi-sales-toast__close" onclick="dismissSalesToast()" aria-label="Close notification">&times;</button>
+  <div class="adivasi-sales-toast__body">
+    <div class="adivasi-sales-toast__badge">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        <polyline points="9 12 11 14 15 10"></polyline>
+      </svg>
+    </div>
+    <div class="adivasi-sales-toast__content">
+      <div class="adivasi-sales-toast__buyer" id="ToastBuyerName">Pooja from Pune, MH</div>
+      <div class="adivasi-sales-toast__item" id="ToastItemName">Ordered 500ml Hair Growth Pack</div>
+      <div class="adivasi-sales-toast__footer">
+        <span class="adivasi-sales-toast__time" id="ToastTimeAgo">2 minutes ago</span>
+        <span class="adivasi-sales-toast__dot">&bull;</span>
+        <span class="adivasi-sales-toast__verified">Verified Buyer ✓</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .adivasi-sales-toast {
+    position: fixed;
+    bottom: 24px;
+    left: 20px;
+    z-index: 9998;
+    background: #ffffff;
+    border-left: 4px solid #16a34a;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    padding: 12px 16px 12px 12px;
+    max-width: 320px;
+    transform: translateY(120%) scale(0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+    border: 1px solid #e5e7eb;
+    border-left-width: 4px;
+    font-family: inherit;
+  }
+
+  .adivasi-sales-toast.is-active {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .adivasi-sales-toast__close {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    color: #9ca3af;
+    cursor: pointer;
+    line-height: 1;
+    padding: 2px 4px;
+  }
+
+  .adivasi-sales-toast__close:hover {
+    color: #1a2421;
+  }
+
+  .adivasi-sales-toast__body {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .adivasi-sales-toast__badge {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #eefbf1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .adivasi-sales-toast__content {
+    line-height: 1.25;
+  }
+
+  .adivasi-sales-toast__buyer {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #1a2421;
+  }
+
+  .adivasi-sales-toast__item {
+    font-size: 11.5px;
+    color: #4b5563;
+    margin-top: 1px;
+    font-weight: 500;
+  }
+
+  .adivasi-sales-toast__footer {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 3px;
+    font-size: 10px;
+  }
+
+  .adivasi-sales-toast__time {
+    color: #9ca3af;
+  }
+
+  .adivasi-sales-toast__dot {
+    color: #cbd5e1;
+  }
+
+  .adivasi-sales-toast__verified {
+    color: #16a34a;
+    font-weight: 700;
+  }
+
+  @media (max-width: 480px) {
+    .adivasi-sales-toast {
+      bottom: 74px; /* leaves room for mobile sticky bar if active */
+      left: 12px;
+      right: 12px;
+      max-width: calc(100% - 24px);
+      padding: 10px 12px;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    const buyerData = [
+      { name: "Pooja Patel", city: "Ahmedabad, GJ", item: "500ml Regular Hair Growth Oil", time: "2 mins ago" },
+      { name: "Rajesh Kumar", city: "Bengaluru, KA", item: "1000ml Family Value Pack", time: "4 mins ago" },
+      { name: "Meera Nair", city: "Kochi, KL", item: "500ml Woodfire Brewed Oil", time: "7 mins ago" },
+      { name: "Amit Sharma", city: "Jaipur, RJ", item: "500ml Adivasi Herbal Hair Oil", time: "11 mins ago" },
+      { name: "Kavita Singh", city: "Lucknow, UP", item: "1000ml Family Value Pack", time: "14 mins ago" },
+      { name: "Sunita Deshmukh", city: "Pune, MH", item: "250ml Starter Trial Pack", time: "16 mins ago" },
+      { name: "Deepak Verma", city: "Delhi NCR", item: "500ml Ayurvedic Growth Oil", time: "19 mins ago" }
+    ];
+
+    let currentIndex = 0;
+    let toastTimer = null;
+
+    function showNextToast() {
+      if (sessionStorage.getItem('adivasi_toast_dismissed') === 'true') return;
+
+      const toast = document.getElementById('AdivasiSalesToast');
+      const buyerEl = document.getElementById('ToastBuyerName');
+      const itemEl = document.getElementById('ToastItemName');
+      const timeEl = document.getElementById('ToastTimeAgo');
+
+      if (!toast || !buyerEl || !itemEl || !timeEl) return;
+
+      const current = buyerData[currentIndex];
+      buyerEl.textContent = `${current.name} from ${current.city}`;
+      itemEl.textContent = current.item;
+      timeEl.textContent = current.time;
+
+      toast.classList.add('is-active');
+
+      setTimeout(() => {
+        toast.classList.remove('is-active');
+      }, 5000);
+
+      currentIndex = (currentIndex + 1) % buyerData.length;
+      toastTimer = setTimeout(showNextToast, Math.floor(Math.random() * 6000) + 14000);
+    }
+
+    window.dismissSalesToast = function () {
+      const toast = document.getElementById('AdivasiSalesToast');
+      if (toast) toast.classList.remove('is-active');
+      clearTimeout(toastTimer);
+      sessionStorage.setItem('adivasi_toast_dismissed', 'true');
+    };
+
+    setTimeout(showNextToast, 5000);
+  })();
+</script>

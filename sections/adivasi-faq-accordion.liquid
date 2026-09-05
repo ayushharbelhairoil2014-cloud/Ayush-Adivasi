@@ -1,0 +1,263 @@
+{% comment %}
+  Adivasi Delivery, COD & Guarantee FAQ Accordion Section
+  High-converting collapsible FAQ to eliminate buying hesitation on mobile & desktop.
+{% endcomment %}
+
+<div class="adivasi-faq section-{{ section.id }}-padding" style="background-color: {{ section.settings.bg_color }};">
+  <div class="page-width">
+    <div class="adivasi-faq__header">
+      <span class="adivasi-faq__pill">FREQUENTLY ASKED QUESTIONS</span>
+      <h2 class="adivasi-faq__title">Everything You Need To Know</h2>
+      <p class="adivasi-faq__subtitle">
+        Have questions about delivery, COD, or authenticity? Here are direct answers from our tribal team.
+      </p>
+    </div>
+
+    <div class="adivasi-faq__container">
+      <!-- FAQ 1 -->
+      <details class="adivasi-faq__item" open>
+        <summary class="adivasi-faq__question">
+          <span>How do I verify that this is 100% Original Pakshirajapura Adivasi Oil?</span>
+          <span class="adivasi-faq__toggle">+</span>
+        </summary>
+        <div class="adivasi-faq__answer">
+          <p>
+            Every authentic bottle from our Mysore sanctuary comes with our <strong>official 3D golden security hologram</strong> on the cap and tamper-proof neck shrink wrap. Additionally, real woodfire brewed herbal oil has fine organic root sediments visible at the base of the bottle and carries a pure herbal aroma with zero synthetic fragrance.
+          </p>
+        </div>
+      </details>
+
+      <!-- FAQ 2 -->
+      <details class="adivasi-faq__item">
+        <summary class="adivasi-faq__question">
+          <span>Is Cash on Delivery (COD) available in my city/village?</span>
+          <span class="adivasi-faq__toggle">+</span>
+        </summary>
+        <div class="adivasi-faq__answer">
+          <p>
+            <strong>Yes! 100% Cash on Delivery (COD) is available across all 28,000+ PIN codes</strong> in India. You do not need to pay anything in advance. You can pay with cash or via any UPI QR code (Google Pay, PhonePe, Paytm) directly to the delivery person when your parcel arrives.
+          </p>
+        </div>
+      </details>
+
+      <!-- FAQ 3 -->
+      <details class="adivasi-faq__item">
+        <summary class="adivasi-faq__question">
+          <span>How many days will express delivery take?</span>
+          <span class="adivasi-faq__toggle">+</span>
+        </summary>
+        <div class="adivasi-faq__answer">
+          <p>
+            All orders placed before 4:00 PM are dispatched same-day via BlueDart, Delhivery, or Xpressbees. Delivery typically takes <strong>3 to 5 business days</strong> depending on your state and PIN code. You will receive real-time SMS tracking updates on your phone.
+          </p>
+        </div>
+      </details>
+
+      <!-- FAQ 4 -->
+      <details class="adivasi-faq__item">
+        <summary class="adivasi-faq__question">
+          <span>How soon can I expect results for severe hair fall?</span>
+          <span class="adivasi-faq__toggle">+</span>
+        </summary>
+        <div class="adivasi-faq__answer">
+          <p>
+            Most users report a <strong>60% to 75% reduction in hair fall within 14 to 18 days</strong> of regular application. Scalp dandruff usually disappears within the first 2 to 3 washes. For new baby hair regrowth and thickening of bald patches, we recommend continuing the oil ritual for 6 to 8 weeks.
+          </p>
+        </div>
+      </details>
+
+      <!-- FAQ 5 -->
+      <details class="adivasi-faq__item">
+        <summary class="adivasi-faq__question">
+          <span>Can both men and women use this herbal hair oil?</span>
+          <span class="adivasi-faq__toggle">+</span>
+        </summary>
+        <div class="adivasi-faq__answer">
+          <p>
+            Yes! Our 108 wild herb formulation is completely unisex and safe for people of all ages (from 12 years and older). It treats hair fall, thinning crowns, receding hairlines, and dry frizzy hair with equal potency.
+          </p>
+        </div>
+      </details>
+    </div>
+
+    <div class="adivasi-faq__footer">
+      <p>Still have doubts? Our WhatsApp helpline is open 7 days a week.</p>
+      <a href="{{ section.settings.cta_link }}" class="adivasi-faq__cta">
+        ORDER NOW &bull; CASH ON DELIVERY (COD)
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .adivasi-faq {
+    padding: 60px 0;
+    background: #ffffff;
+  }
+
+  .adivasi-faq__header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 40px;
+  }
+
+  .adivasi-faq__pill {
+    display: inline-block;
+    background: rgba(197, 155, 39, 0.15);
+    color: #926a11;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+
+  .adivasi-faq__title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0a3a2f;
+    margin: 0 0 12px;
+    line-height: 1.25;
+  }
+
+  .adivasi-faq__subtitle {
+    font-size: 14.5px;
+    color: #4b5563;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .adivasi-faq__container {
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .adivasi-faq__item {
+    border: 1px solid #ebdcc5;
+    border-radius: 10px;
+    background: #fbf9f4;
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+
+  .adivasi-faq__item[open] {
+    border-color: #0a3a2f;
+    background: #ffffff;
+    box-shadow: 0 4px 16px rgba(10, 58, 47, 0.06);
+  }
+
+  .adivasi-faq__question {
+    padding: 16px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0a3a2f;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    user-select: none;
+  }
+
+  .adivasi-faq__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .adivasi-faq__toggle {
+    font-size: 20px;
+    font-weight: 700;
+    color: #c59b27;
+    margin-left: 12px;
+    transition: transform 0.2s;
+  }
+
+  .adivasi-faq__item[open] .adivasi-faq__toggle {
+    transform: rotate(45deg);
+    color: #0a3a2f;
+  }
+
+  .adivasi-faq__answer {
+    padding: 0 20px 18px;
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.55;
+  }
+
+  .adivasi-faq__answer strong {
+    color: #0a3a2f;
+  }
+
+  .adivasi-faq__footer {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .adivasi-faq__footer p {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 14px;
+  }
+
+  .adivasi-faq__cta {
+    display: inline-block;
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+    padding: 13px 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35);
+    transition: transform 0.2s;
+  }
+
+  .adivasi-faq__cta:hover {
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 600px) {
+    .adivasi-faq {
+      padding: 40px 0;
+    }
+    .adivasi-faq__title {
+      font-size: 24px;
+    }
+    .adivasi-faq__question {
+      font-size: 13.5px;
+      padding: 14px 16px;
+    }
+    .adivasi-faq__answer {
+      font-size: 12.5px;
+      padding: 0 16px 14px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Adivasi FAQ Accordion",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link",
+      "default": "/collections/all"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Adivasi FAQ Accordion"
+    }
+  ]
+}
+{% endschema %}

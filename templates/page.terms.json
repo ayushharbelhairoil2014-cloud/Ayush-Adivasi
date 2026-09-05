@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "terms": {
+      "type": "adivasi-policy",
+      "settings": {
+        "policy_badge": "LEGAL AGREEMENT",
+        "title": "Terms of Service",
+        "content": "<h3>1. Overview</h3><p>This store is operated by Ayush Adivasi Herbal Hair Oil. By visiting our website or purchasing an authentic herbal hair oil product from us, you agree to be bound by the following terms and conditions.</p><h3>2. Product Authenticity Guarantee</h3><p>All herbal hair oil formulations sold on our official website are 100% genuine, woodfire brewed, and shipped with an official 3D security hologram from our ancestral sanctuary in Pakshirajapura, Mysore.</p><h3>3. Cash on Delivery (COD) Terms</h3><p>When selecting Cash on Delivery, you agree to receive the package and tender payment to the courier partner upon arrival. Repeated intentional non-acceptance of COD shipments may result in cancellation of future COD privileges.</p><h3>4. Governing Law</h3><p>These terms shall be governed by and construed in accordance with the laws of the Republic of India with jurisdiction in Mysore, Karnataka.</p>"
+      }
+    }
+  },
+  "order": [
+    "terms"
+  ]
+}

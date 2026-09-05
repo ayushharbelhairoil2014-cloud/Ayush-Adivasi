@@ -1,0 +1,143 @@
+{% comment %}
+  Adivasi Official Contact Information Section
+{% endcomment %}
+
+<div class="adivasi-contact-info section-{{ section.id }}-padding">
+  <div class="page-width page-width--narrow">
+    <div class="adivasi-contact-info__card">
+      <span class="adivasi-contact-info__pill">DIRECT REACH &amp; SUPPORT</span>
+      <h2 class="adivasi-contact-info__title">We Are Here To Help You</h2>
+      <p class="adivasi-contact-info__desc">
+        Have a question about your Cash on Delivery parcel or need guidance on choosing the right bottle size? Reach out to our family directly.
+      </p>
+
+      <div class="adivasi-contact-info__grid">
+        <div class="adivasi-contact-item">
+          <div class="adivasi-contact-item__icon">📍</div>
+          <div class="adivasi-contact-item__body">
+            <strong>Sanctuary &amp; Brewing Hub:</strong>
+            <p>Ayush Adivasi Herbal Care, Main Road, Pakshirajapura, Hunsur Taluk, Mysore District, Karnataka - 571105</p>
+          </div>
+        </div>
+
+        <div class="adivasi-contact-item">
+          <div class="adivasi-contact-item__icon">💬</div>
+          <div class="adivasi-contact-item__body">
+            <strong>WhatsApp Helpline:</strong>
+            <p>+91 98800 00000 (Mon - Sun: 9:00 AM to 8:00 PM)</p>
+          </div>
+        </div>
+
+        <div class="adivasi-contact-item">
+          <div class="adivasi-contact-item__icon">✉️</div>
+          <div class="adivasi-contact-item__body">
+            <strong>Official Email:</strong>
+            <p>support@ayushadivasi.com</p>
+          </div>
+        </div>
+
+        <div class="adivasi-contact-item">
+          <div class="adivasi-contact-item__icon">🚚</div>
+          <div class="adivasi-contact-item__body">
+            <strong>COD Delivery Inquiries:</strong>
+            <p>All parcels dispatched via BlueDart, Delhivery &amp; Xpressbees with active SMS tracking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .adivasi-contact-info {
+    padding: 40px 0 20px;
+    background: #fbf9f4;
+  }
+
+  .adivasi-contact-info__card {
+    background: #ffffff;
+    border: 1px solid #ebdcc5;
+    border-radius: 12px;
+    padding: 32px 28px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  }
+
+  .adivasi-contact-info__pill {
+    display: inline-block;
+    background: rgba(197, 155, 39, 0.15);
+    color: #926a11;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+
+  .adivasi-contact-info__title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #0a3a2f;
+    margin: 0 0 8px;
+  }
+
+  .adivasi-contact-info__desc {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.5;
+    margin: 0 0 24px;
+  }
+
+  .adivasi-contact-info__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .adivasi-contact-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: #fbf9f4;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #ebdcc5;
+  }
+
+  .adivasi-contact-item__icon {
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .adivasi-contact-item__body strong {
+    font-size: 13px;
+    color: #0a3a2f;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .adivasi-contact-item__body p {
+    font-size: 12px;
+    color: #4b5563;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    .adivasi-contact-info__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Adivasi Contact Info",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Adivasi Contact Info"
+    }
+  ]
+}
+{% endschema %}

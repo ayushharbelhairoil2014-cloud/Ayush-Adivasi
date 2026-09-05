@@ -1,0 +1,194 @@
+{% comment %}
+  Adivasi 1-Click Cash on Delivery (COD) Action Button
+  High-converting, pulsating mobile-first COD button with trust microcopy.
+{% endcomment %}
+
+<div class="adivasi-cod-container" data-adivasi-cod-wrapper>
+  <button
+    type="button"
+    class="adivasi-cod-btn"
+    id="AdivasiCodBtn-{{ section.id }}"
+    onclick="handleAdivasiCodClick(this)"
+  >
+    <span class="adivasi-cod-btn__pulse-ring"></span>
+    <span class="adivasi-cod-btn__icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+        <line x1="2" y1="10" x2="22" y2="10"></line>
+      </svg>
+    </span>
+    <span class="adivasi-cod-btn__text">
+      <span class="adivasi-cod-btn__main">ORDER NOW &mdash; CASH ON DELIVERY</span>
+      <span class="adivasi-cod-btn__sub">Pay When You Receive Bottle &bull; Free Delivery</span>
+    </span>
+  </button>
+
+  <div class="adivasi-cod-guarantee-bar">
+    <div class="adivasi-cod-guarantee-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span>Zero Prepayment</span>
+    </div>
+    <div class="adivasi-cod-guarantee-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span>Express 3-5 Days Dispatch</span>
+    </div>
+    <div class="adivasi-cod-guarantee-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span>Authentic Hologram</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .adivasi-cod-container {
+    margin: 14px 0 18px 0;
+    width: 100%;
+  }
+
+  .adivasi-cod-btn {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    color: #ffffff;
+    border: none;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.42);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    text-decoration: none;
+    overflow: hidden;
+  }
+
+  .adivasi-cod-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(22, 163, 74, 0.55);
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  }
+
+  .adivasi-cod-btn:active {
+    transform: translateY(0);
+  }
+
+  .adivasi-cod-btn__pulse-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    animation: adivasi-pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    pointer-events: none;
+  }
+
+  @keyframes adivasi-pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(22, 163, 74, 0);
+    }
+  }
+
+  .adivasi-cod-btn__icon {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px;
+    border-radius: 50%;
+  }
+
+  .adivasi-cod-btn__text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 1.25;
+  }
+
+  .adivasi-cod-btn__main {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .adivasi-cod-btn__sub {
+    font-size: 11px;
+    font-weight: 500;
+    color: #e2fbe8;
+    opacity: 0.95;
+    margin-top: 2px;
+  }
+
+  .adivasi-cod-guarantee-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 8px 10px;
+    background: #f4fbf6;
+    border: 1px dashed rgba(22, 163, 74, 0.35);
+    border-radius: 6px;
+    font-size: 11px;
+    color: #0d542b;
+    font-weight: 600;
+  }
+
+  .adivasi-cod-guarantee-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  @media (max-width: 480px) {
+    .adivasi-cod-btn {
+      padding: 13px 14px;
+    }
+    .adivasi-cod-btn__main {
+      font-size: 13.5px;
+    }
+    .adivasi-cod-btn__sub {
+      font-size: 10.5px;
+    }
+    .adivasi-cod-guarantee-bar {
+      font-size: 9.5px;
+      padding: 6px 8px;
+    }
+  }
+</style>
+
+<script>
+  function handleAdivasiCodClick(btn) {
+    // 1. Try triggering COD App button if present (EasySell, Fastrr, etc.)
+    const easysellBtn = document.querySelector('.easysell-order-now, [data-easysell-btn], .fastrr-buy-now, [data-fastrr-button]');
+    if (easysellBtn) {
+      easysellBtn.click();
+      return;
+    }
+
+    // 2. Otherwise submit current product form directly to checkout
+    const form = btn.closest('product-info')?.querySelector('form[action*="/cart/add"]') ||
+                 document.querySelector('form[action*="/cart/add"]');
+    if (form) {
+      const submitBtn = form.querySelector('button[type="submit"][name="add"]');
+      if (submitBtn) {
+        // Add note or redirect directly to checkout
+        submitBtn.click();
+        setTimeout(() => {
+          window.location.href = '/checkout';
+        }, 600);
+      } else {
+        form.submit();
+      }
+    } else {
+      window.location.href = '/collections/all';
+    }
+  }
+</script>

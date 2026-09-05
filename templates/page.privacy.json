@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "privacy": {
+      "type": "adivasi-policy",
+      "settings": {
+        "policy_badge": "PRIVACY & DATA PROTECTION",
+        "title": "Privacy Policy",
+        "content": "<h3>1. Information We Collect</h3><p>When you visit Ayush Adivasi Herbal Hair Oil or place a Cash on Delivery (COD) order, we collect essential order processing details including your name, shipping delivery address, phone number, and PIN code. We do not store financial credentials or banking PINs.</p><h3>2. How We Use Your Information</h3><p>Your delivery information is strictly shared only with our verified courier logistics partners (BlueDart, Delhivery, Xpressbees) to ensure speedy delivery and SMS tracking of your parcel.</p><h3>3. Data Confidentiality</h3><p>We respect customer privacy. We never sell, rent, or lease your personal information to third-party telemarketers.</p><h3>4. Contact & Grievance Officer</h3><p>For any inquiries regarding data protection, reach our Grievance Officer at <strong>support@ayushadivasi.com</strong> or our headquarters at Pakshirajapura, Hunsur Taluk, Mysore, Karnataka 571105.</p>"
+      }
+    }
+  },
+  "order": [
+    "privacy"
+  ]
+}

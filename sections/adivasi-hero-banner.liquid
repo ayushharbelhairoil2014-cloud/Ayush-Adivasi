@@ -1,0 +1,469 @@
+{% comment %}
+  Adivasi Hero Banner Section
+  High-impact, mobile-optimized hero section with ratings, trust badges, and direct COD action.
+{% endcomment %}
+
+<div class="adivasi-hero section-{{ section.id }}-padding" style="background-color: {{ section.settings.bg_color }};">
+  <div class="adivasi-hero__container page-width">
+    <div class="adivasi-hero__grid">
+      <!-- Left Content Column -->
+      <div class="adivasi-hero__content">
+        <div class="adivasi-hero__badge">
+          <span class="adivasi-hero__badge-icon">🌿</span>
+          <span class="adivasi-hero__badge-text">{{ section.settings.badge_text }}</span>
+        </div>
+
+        <h1 class="adivasi-hero__heading">
+          {{ section.settings.heading }}
+        </h1>
+
+        <p class="adivasi-hero__subheading">
+          {{ section.settings.subheading }}
+        </p>
+
+        <!-- Social Proof Star Rating -->
+        <div class="adivasi-hero__rating">
+          <div class="adivasi-hero__stars">★★★★★</div>
+          <span class="adivasi-hero__rating-text">
+            <strong>4.9/5 Rating</strong> &bull; 42,800+ Happy Customers Across India
+          </span>
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="adivasi-hero__ctas">
+          <a href="{{ section.settings.cta_link }}" class="adivasi-hero__btn-cod">
+            <span class="adivasi-hero__btn-icon">📦</span>
+            <span class="adivasi-hero__btn-text">
+              <strong>ORDER CASH ON DELIVERY</strong>
+              <small>Pay When You Receive Bottle &bull; Free Shipping</small>
+            </span>
+          </a>
+
+          <a href="{{ section.settings.secondary_cta_link }}" class="adivasi-hero__btn-secondary">
+            View All Packs &rarr;
+          </a>
+        </div>
+
+        <!-- Micro Trust Row -->
+        <div class="adivasi-hero__trust-row">
+          <div class="adivasi-hero__trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C59B27" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>100% Herbal Roots</span>
+          </div>
+          <div class="adivasi-hero__trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C59B27" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Woodfire Brewed</span>
+          </div>
+          <div class="adivasi-hero__trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C59B27" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Ayush Approved</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Visual Column -->
+      <div class="adivasi-hero__visual">
+        <div class="adivasi-hero__card">
+          <div class="adivasi-hero__card-tag">BEST SELLER #1</div>
+          
+          <div class="adivasi-hero__card-body">
+            <div class="adivasi-hero__bottle-glow"></div>
+            <div class="adivasi-hero__card-title">Authentic Adivasi Herbal Hair Oil</div>
+            <div class="adivasi-hero__card-origin">Direct from Pakshirajapura Forest, Mysore</div>
+            
+            <div class="adivasi-hero__price-box">
+              <span class="adivasi-hero__current-price">₹899</span>
+              <span class="adivasi-hero__old-price">₹1,799</span>
+              <span class="adivasi-hero__save-pill">SAVE 50%</span>
+            </div>
+
+            <div class="adivasi-hero__urgency">
+              <span class="adivasi-hero__pulse-dot"></span>
+              <span>🔥 <strong>High Demand:</strong> Only 14 bottles left for today's woodfire batch!</span>
+            </div>
+
+            <div class="adivasi-hero__card-features">
+              <div class="adivasi-hero__feat">🌱 Stops Severe Hair Fall</div>
+              <div class="adivasi-hero__feat">✨ 14-Day Visible Results</div>
+              <div class="adivasi-hero__feat">🛡️ Hologram Protected</div>
+              <div class="adivasi-hero__feat">🚚 3-5 Days Free Express Delivery</div>
+            </div>
+
+            <a href="{{ section.settings.cta_link }}" class="adivasi-hero__card-btn">
+              CLAIM 50% OFF &amp; ORDER COD
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .adivasi-hero {
+    position: relative;
+    padding: 44px 0 54px;
+    background: radial-gradient(circle at 10% 20%, #0d4639 0%, #0a3a2f 60%, #06261f 100%);
+    color: #ffffff;
+    overflow: hidden;
+  }
+
+  .adivasi-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(rgba(197, 155, 39, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+  }
+
+  .adivasi-hero__grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .adivasi-hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(197, 155, 39, 0.16);
+    border: 1px solid #c59b27;
+    color: #f7d57f;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    margin-bottom: 18px;
+  }
+
+  .adivasi-hero__heading {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.18;
+    color: #ffffff;
+    margin: 0 0 16px;
+    letter-spacing: -0.5px;
+  }
+
+  .adivasi-hero__heading span {
+    color: #f6cb59;
+  }
+
+  .adivasi-hero__subheading {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #e2f0ec;
+    margin: 0 0 22px;
+    max-width: 580px;
+  }
+
+  .adivasi-hero__rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .adivasi-hero__stars {
+    color: #fbbf24;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+
+  .adivasi-hero__rating-text {
+    font-size: 13px;
+    color: #d1fae5;
+  }
+
+  .adivasi-hero__ctas {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 26px;
+    flex-wrap: wrap;
+  }
+
+  .adivasi-hero__btn-cod {
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 13px 22px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 6px 20px rgba(22, 163, 74, 0.45);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .adivasi-hero__btn-cod:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(22, 163, 74, 0.6);
+  }
+
+  .adivasi-hero__btn-icon {
+    font-size: 22px;
+  }
+
+  .adivasi-hero__btn-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .adivasi-hero__btn-text strong {
+    font-size: 14.5px;
+    letter-spacing: 0.5px;
+  }
+
+  .adivasi-hero__btn-text small {
+    font-size: 10.5px;
+    color: #dcfce7;
+    margin-top: 1px;
+  }
+
+  .adivasi-hero__btn-secondary {
+    color: #ffffff;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    text-decoration: none;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.2s;
+  }
+
+  .adivasi-hero__btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+  }
+
+  .adivasi-hero__trust-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .adivasi-hero__trust-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #f3efe6;
+    font-weight: 600;
+  }
+
+  /* Right Visual Card */
+  .adivasi-hero__card {
+    position: relative;
+    background: #ffffff;
+    color: #1a2421;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+    border: 2px solid #c59b27;
+  }
+
+  .adivasi-hero__card-tag {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: #c59b27;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.6px;
+  }
+
+  .adivasi-hero__card-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0a3a2f;
+    margin-bottom: 4px;
+  }
+
+  .adivasi-hero__card-origin {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 16px;
+  }
+
+  .adivasi-hero__price-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fbf9f4;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #ebdcc5;
+    margin-bottom: 14px;
+  }
+
+  .adivasi-hero__current-price {
+    font-size: 24px;
+    font-weight: 900;
+    color: #0a3a2f;
+  }
+
+  .adivasi-hero__old-price {
+    font-size: 15px;
+    color: #9ca3af;
+    text-decoration: line-through;
+  }
+
+  .adivasi-hero__save-pill {
+    background: #dc2626;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .adivasi-hero__urgency {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #991b1b;
+    background: #fef2f2;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    border: 1px solid #fecaca;
+  }
+
+  .adivasi-hero__pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: #ef4444;
+    border-radius: 50%;
+    animation: adivasi-dot-pulse 1.4s infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes adivasi-dot-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.3); }
+  }
+
+  .adivasi-hero__card-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 18px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #374151;
+  }
+
+  .adivasi-hero__feat {
+    background: #f4fbf6;
+    border: 1px solid #d1fae5;
+    padding: 6px 8px;
+    border-radius: 6px;
+  }
+
+  .adivasi-hero__card-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+    padding: 13px;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.4);
+    letter-spacing: 0.4px;
+    transition: transform 0.2s;
+  }
+
+  .adivasi-hero__card-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 900px) {
+    .adivasi-hero {
+      padding: 28px 0 38px;
+    }
+    .adivasi-hero__grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .adivasi-hero__heading {
+      font-size: 28px;
+    }
+    .adivasi-hero__subheading {
+      font-size: 14px;
+    }
+    .adivasi-hero__ctas {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .adivasi-hero__btn-secondary {
+      text-align: center;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Adivasi Hero Banner",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#0A3A2F"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "100% ORIGINAL PAKSHIRAJAPURA AYUSH HERBAL"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Stop Hair Fall in 14 Days With Ancestral 108 Wild Forest Herbs"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Hand-harvested in Western Ghats by our tribal elders & slow woodfire brewed for 12 hours. Experience genuine Ayurvedic hair regrowth without chemicals."
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Primary CTA Link",
+      "default": "/collections/all"
+    },
+    {
+      "type": "url",
+      "id": "secondary_cta_link",
+      "label": "Secondary CTA Link",
+      "default": "/collections/all"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Adivasi Hero Banner"
+    }
+  ]
+}
+{% endschema %}

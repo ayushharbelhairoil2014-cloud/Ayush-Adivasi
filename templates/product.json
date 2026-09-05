@@ -1,0 +1,127 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "none"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "cod_action": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'adivasi-cod-button' %}"
+          }
+        },
+        "trust_badges": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'adivasi-trust-badges' %}"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "rich_tabs": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'adivasi-rich-description' %}"
+          }
+        },
+        "collapsible-row-delivery": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping & Cash On Delivery Details",
+            "icon": "truck",
+            "content": "<p><strong>Free Express Shipping:</strong> Dispatched within 24 hours from Pakshirajapura, Mysore. Delivery takes 3-5 business days across India.</p><p><strong>Cash on Delivery (COD):</strong> Pay cash or UPI directly to the courier agent when your package arrives at your doorstep.</p>",
+            "page": ""
+          }
+        },
+        "collapsible-row-authenticity": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Authenticity & Original Pakshirajapura Guarantee",
+            "icon": "check_mark",
+            "content": "<p>Every bottle comes sealed with our official golden 3D security hologram. Formulated following ancestral Vedic recipes with zero synthetic chemicals, mineral oils, or artificial colors.</p>",
+            "page": ""
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share Authentic Adivasi Oil"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "variant_picker",
+        "buy_buttons",
+        "cod_action",
+        "trust_badges",
+        "description",
+        "rich_tabs",
+        "collapsible-row-delivery",
+        "collapsible-row-authenticity",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "show",
+        "hide_variants": false,
+        "enable_video_looping": true,
+        "padding_top": 28,
+        "padding_bottom": 40
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "More Authentic Ayurvedic Essentials",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 44
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products"
+  ]
+}

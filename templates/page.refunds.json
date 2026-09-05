@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "refunds": {
+      "type": "adivasi-policy",
+      "settings": {
+        "policy_badge": "CUSTOMER PROTECTION",
+        "title": "Refund, Return & Cancellation Policy",
+        "content": "<h3>1. 7-Day Replacement Guarantee</h3><p>If your bottle arrives damaged, leaking, or with a broken seal/tampered hologram during transit, please WhatsApp our support team at <strong>+91-98800-00000</strong> within 7 days of delivery with an unboxing photo or video. We will immediately dispatch a free replacement bottle with zero extra charge.</p><h3>2. Order Cancellation</h3><p>You can cancel your order anytime before it is dispatched from our Mysore hub by sending an email or WhatsApp message with your Order ID.</p><h3>3. Prepaid & COD Refunds</h3><p>In case of eligible returns or cancellations where payment was processed, the full refund amount will be credited back to your original payment mode or bank account via UPI within 5-7 business days.</p>"
+      }
+    }
+  },
+  "order": [
+    "refunds"
+  ]
+}

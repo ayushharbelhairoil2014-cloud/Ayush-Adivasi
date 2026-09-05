@@ -1,0 +1,7 @@
+*.zip
+EXPORT_NEW_CLIENT_SKILL/
+.agents/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

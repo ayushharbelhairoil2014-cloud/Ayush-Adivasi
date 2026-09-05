@@ -1,0 +1,54 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "brand_text": {
+          "type": "text",
+          "settings": {
+            "heading": "Ayush Adivasi Hair Oil",
+            "subtext": "<p>100% Pure Ancestral Forest Herbs Brewed in Woodfire over 12 hours in Pakshirajapura, Mysore. Sealed with 3D Security Hologram.</p>"
+          }
+        },
+        "link_list": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick Navigation",
+            "menu": "footer"
+          }
+        },
+        "contact_info": {
+          "type": "text",
+          "settings": {
+            "heading": "Pakshirajapura Origin",
+            "subtext": "<p>Main Road, Pakshirajapura, Hunsur Taluk, Mysore District, Karnataka - 571105<br>WhatsApp: +91 98800 00000<br>Cash On Delivery Available India-Wide</p>"
+          }
+        }
+      },
+      "block_order": [
+        "brand_text",
+        "link_list",
+        "contact_info"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "newsletter_enable": false,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}
