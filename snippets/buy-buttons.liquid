@@ -60,6 +60,152 @@
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}
 
+        <style>
+          /* ===================================================
+             AYUSH ADIVASI PREMIUM PRODUCT BUTTONS COLOR GRADING
+             =================================================== */
+          .product-form__buttons {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 12px !important;
+            margin-top: 18px !important;
+            margin-bottom: 18px !important;
+            width: 100% !important;
+          }
+
+          /* Remove Dawn/Trade transparent outline overlay */
+          .product-form__submit::before,
+          .product-form__submit::after,
+          .shopify-payment-button__button::before,
+          .shopify-payment-button__button::after,
+          .shopify-payment-button__button--unbranded::before,
+          .shopify-payment-button__button--unbranded::after,
+          .shopify-payment-button [role="button"]::before,
+          .shopify-payment-button [role="button"]::after {
+            display: none !important;
+            box-shadow: none !important;
+          }
+
+          /* 1. ADD TO CART BUTTON (Deep Emerald Forest & White/Gold) */
+          .product-form__submit,
+          .product-form__submit.button,
+          .product-form__submit.button--secondary,
+          .product-form__submit.button--primary,
+          #ProductSubmitButton-{{ section_id }} {
+            background-color: #0a3a2f !important;
+            background: #0a3a2f !important;
+            color: #ffffff !important;
+            border: 2px solid #0a3a2f !important;
+            border-radius: 8px !important;
+            font-size: 15px !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.8px !important;
+            text-transform: uppercase !important;
+            min-height: 52px !important;
+            height: 52px !important;
+            line-height: 50px !important;
+            padding: 0 24px !important;
+            box-shadow: 0 4px 14px rgba(10, 58, 47, 0.35) !important;
+            transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            cursor: pointer !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important;
+            gap: 8px !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            position: relative !important;
+            z-index: 2 !important;
+          }
+
+          .product-form__submit span,
+          .product-form__submit:not([disabled]) span,
+          .product-form__submit * {
+            color: #ffffff !important;
+            font-weight: 700 !important;
+          }
+
+          .product-form__submit:hover:not([disabled]) {
+            background-color: #06261f !important;
+            background: #06261f !important;
+            border-color: #c59b27 !important;
+            box-shadow: 0 6px 20px rgba(10, 58, 47, 0.5) !important;
+            transform: translateY(-2px);
+          }
+
+          .product-form__submit:hover:not([disabled]) span,
+          .product-form__submit:hover:not([disabled]) * {
+            color: #f6cb59 !important;
+          }
+
+          /* 2. BUY IT NOW / DYNAMIC CHECKOUT / EASYSELL (High-Converting Vibrant COD Green) */
+          .shopify-payment-button {
+            width: 100% !important;
+            margin-top: 0 !important;
+          }
+
+          .shopify-payment-button__button,
+          .shopify-payment-button__button--unbranded,
+          .shopify-payment-button [role="button"],
+          .easysell-order-now,
+          [data-easysell-btn],
+          .easysell-btn {
+            background-color: #16a34a !important;
+            background: linear-gradient(180deg, #16a34a 0%, #15803d 100%) !important;
+            color: #ffffff !important;
+            border: 2px solid #16a34a !important;
+            border-radius: 8px !important;
+            font-size: 15.5px !important;
+            font-weight: 800 !important;
+            letter-spacing: 0.8px !important;
+            text-transform: uppercase !important;
+            min-height: 52px !important;
+            height: 52px !important;
+            line-height: 50px !important;
+            padding: 0 24px !important;
+            box-shadow: 0 4px 18px rgba(22, 163, 74, 0.45) !important;
+            transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            cursor: pointer !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            position: relative !important;
+            z-index: 2 !important;
+          }
+
+          .shopify-payment-button__button--unbranded span,
+          .shopify-payment-button [role="button"] span,
+          .shopify-payment-button__button * {
+            color: #ffffff !important;
+            font-weight: 800 !important;
+          }
+
+          .shopify-payment-button__button--unbranded:hover:not([disabled]),
+          .shopify-payment-button [role="button"]:hover:not([disabled]),
+          .easysell-order-now:hover,
+          [data-easysell-btn]:hover,
+          .easysell-btn:hover {
+            background-color: #15803d !important;
+            background: linear-gradient(180deg, #15803d 0%, #166534 100%) !important;
+            border-color: #15803d !important;
+            box-shadow: 0 6px 24px rgba(22, 163, 74, 0.6) !important;
+            transform: translateY(-2px);
+            color: #ffffff !important;
+          }
+
+          .shopify-payment-button__more-options {
+            color: #0a3a2f !important;
+            font-size: 12.5px !important;
+            font-weight: 600 !important;
+            text-align: center !important;
+          }
+        </style>
+
         <div class="product-form__buttons">
           {%- liquid
             assign check_against_inventory = true
@@ -74,7 +220,7 @@
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
-            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            class="product-form__submit button button--full-width button--primary adivasi-btn-atc"
             {% if product.selected_or_first_available_variant.available == false
               or quantity_rule_soldout
               or product.selected_or_first_available_variant == null
@@ -88,7 +234,7 @@
               {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
-                {{ 'products.product.add_to_cart' | t }}
+                🛒 {{ 'products.product.add_to_cart' | t }}
               {%- endif -%}
             </span>
             {%- render 'loading-spinner' -%}
@@ -96,6 +242,8 @@
           {%- if show_dynamic_checkout -%}
             {{ form | payment_button }}
           {%- endif -%}
+          <!-- EasySell App Mount Container -->
+          <div class="easysell-order-form-container" style="width: 100%;"></div>
         </div>
       {%- endform -%}
     </product-form>
