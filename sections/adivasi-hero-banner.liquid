@@ -3,7 +3,13 @@
   Features authentic bottle photography, Pakshirajapura heritage badge, real ratings, and direct 1-Click COD action.
 {% endcomment %}
 
-<div class="adivasi-hero section-{{ section.id }}-padding" style="background-color: {{ section.settings.bg_color }};">
+{%- assign bg_banner_url = 'adivasi-hero-bg.jpg' | asset_url -%}
+{%- if section.settings.banner_image != blank -%}
+  {%- assign bg_banner_url = section.settings.banner_image | image_url: width: 2400 -%}
+{%- endif -%}
+
+<div class="adivasi-hero section-{{ section.id }}-padding" style="--hero-bg-url: url('{{ bg_banner_url }}');">
+  <div class="adivasi-hero__backdrop-overlay"></div>
   <div class="adivasi-hero__container page-width">
     <div class="adivasi-hero__grid">
       <!-- Left Content Column -->
@@ -122,10 +128,27 @@
 <style>
   .adivasi-hero {
     position: relative;
-    padding: 36px 0 48px;
-    background: radial-gradient(circle at 10% 20%, #0d4639 0%, #0a3a2f 60%, #06261f 100%);
+    padding: 46px 0 56px;
+    background-color: #06261f;
+    background-image: 
+      linear-gradient(180deg, rgba(6, 38, 31, 0.84) 0%, rgba(10, 58, 47, 0.88) 50%, rgba(6, 38, 31, 0.95) 100%),
+      var(--hero-bg-url, url("{{ 'adivasi-hero-bg.jpg' | asset_url }}"));
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     color: #ffffff;
     overflow: hidden;
+  }
+
+  .adivasi-hero__backdrop-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 75% 30%, rgba(197, 155, 39, 0.12) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
   }
 
   .adivasi-hero::before {
@@ -519,6 +542,11 @@
 {
   "name": "Adivasi Hero Banner",
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Adivasi Background Banner"
+    },
     {
       "type": "color",
       "id": "bg_color",

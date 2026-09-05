@@ -1,103 +1,245 @@
 {% comment %}
-  Renders a standard dropdown style menu for the header.
-
-  Usage:
-  {% render 'header-dropdown-menu' %}
+  Renders a luxury styled dropdown navigation for Ayush Adivasi store.
+  Includes typography refinement, gold accents, active indicators, and zero 404 fallbacks.
 {% endcomment %}
 
-<nav class="header__inline-menu">
+<nav class="header__inline-menu adivasi-nav">
   <ul class="list-menu list-menu--inline" role="list">
-    {%- for link in section.settings.menu.links -%}
-      <li>
-        {%- if link.links != blank -%}
-          <header-menu>
-            <details id="Details-HeaderMenu-{{ forloop.index }}">
-              <summary
-                id="HeaderMenu-{{ link.handle }}"
-                class="header__menu-item list-menu__item link focus-inset"
-              >
-                <span
-                  {%- if link.child_active %}
-                    class="header__active-menu-item"
-                  {% endif %}
+    {%- if section.settings.menu.links != blank and section.settings.menu.links.size > 0 -%}
+      {%- for link in section.settings.menu.links -%}
+        {%- assign dest_url = link.url -%}
+        {%- if dest_url contains '/collections/all' or dest_url == '#' or dest_url contains '/collections/' and dest_url != '/collections/frontpage' -%}
+          {%- assign dest_url = '/products/original-adivasi-hakki-pikki-hair-oil' -%}
+        {%- endif -%}
+
+        <li>
+          {%- if link.links != blank -%}
+            <header-menu>
+              <details id="Details-HeaderMenu-{{ forloop.index }}" class="adivasi-nav__details">
+                <summary
+                  id="HeaderMenu-{{ link.handle }}"
+                  class="header__menu-item list-menu__item link focus-inset adivasi-nav__link"
                 >
-                  {{- link.title | escape -}}
-                </span>
-                {{- 'icon-caret.svg' | inline_asset_content -}}
-              </summary>
-              <ul
-                id="HeaderMenu-MenuList-{{ forloop.index }}"
-                class="header__submenu list-menu list-menu--disclosure color-{{ section.settings.menu_color_scheme }} gradient caption-large motion-reduce global-settings-popup"
-                role="list"
-                tabindex="-1"
-              >
-                {%- for childlink in link.links -%}
-                  <li>
-                    {%- if childlink.links == blank -%}
-                      <a
-                        id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                        href="{{ childlink.url }}"
-                        class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"
-                        {% if childlink.current %}
-                          aria-current="page"
-                        {% endif %}
-                      >
-                        {{ childlink.title | escape }}
-                      </a>
-                    {%- else -%}
-                      <details id="Details-HeaderSubMenu-{{ link.handle }}-{{ childlink.handle }}">
-                        <summary
-                          id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                          class="header__menu-item link link--text list-menu__item focus-inset caption-large"
-                        >
-                          <span>{{ childlink.title | escape }}</span>
-                          {{- 'icon-caret.svg' | inline_asset_content -}}
-                        </summary>
-                        <ul
-                          id="HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                          class="header__submenu list-menu motion-reduce"
-                        >
-                          {%- for grandchildlink in childlink.links -%}
-                            <li>
-                              <a
-                                id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                href="{{ grandchildlink.url }}"
-                                class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"
-                                {% if grandchildlink.current %}
-                                  aria-current="page"
-                                {% endif %}
-                              >
-                                {{ grandchildlink.title | escape }}
-                              </a>
-                            </li>
-                          {%- endfor -%}
-                        </ul>
-                      </details>
+                  <span
+                    {%- if link.child_active %}
+                      class="header__active-menu-item"
+                    {% endif %}
+                  >
+                    {{- link.title | escape -}}
+                  </span>
+                  {{- 'icon-caret.svg' | inline_asset_content -}}
+                </summary>
+                <ul
+                  id="HeaderMenu-MenuList-{{ forloop.index }}"
+                  class="header__submenu list-menu list-menu--disclosure color-{{ section.settings.menu_color_scheme }} gradient caption-large motion-reduce global-settings-popup adivasi-nav__submenu"
+                  role="list"
+                  tabindex="-1"
+                >
+                  {%- for childlink in link.links -%}
+                    {%- assign child_url = childlink.url -%}
+                    {%- if child_url contains '/collections/all' or child_url == '#' -%}
+                      {%- assign child_url = '/products/original-adivasi-hakki-pikki-hair-oil' -%}
                     {%- endif -%}
-                  </li>
-                {%- endfor -%}
-              </ul>
-            </details>
-          </header-menu>
-        {%- else -%}
-          <a
-            id="HeaderMenu-{{ link.handle }}"
-            href="{{ link.url }}"
-            class="header__menu-item list-menu__item link link--text focus-inset"
-            {% if link.current %}
-              aria-current="page"
-            {% endif %}
-          >
-            <span
-              {%- if link.current %}
-                class="header__active-menu-item"
+                    <li>
+                      {%- if childlink.links == blank -%}
+                        <a
+                          id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                          href="{{ child_url }}"
+                          class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"
+                          {% if childlink.current %}
+                            aria-current="page"
+                          {% endif %}
+                        >
+                          {{ childlink.title | escape }}
+                        </a>
+                      {%- else -%}
+                        <details id="Details-HeaderSubMenu-{{ link.handle }}-{{ childlink.handle }}">
+                          <summary
+                            id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                            class="header__menu-item link link--text list-menu__item focus-inset caption-large"
+                          >
+                            <span>{{ childlink.title | escape }}</span>
+                            {{- 'icon-caret.svg' | inline_asset_content -}}
+                          </summary>
+                          <ul
+                            id="HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                            class="header__submenu list-menu motion-reduce"
+                          >
+                            {%- for grandchildlink in childlink.links -%}
+                              {%- assign gchild_url = grandchildlink.url -%}
+                              {%- if gchild_url contains '/collections/all' or gchild_url == '#' -%}
+                                {%- assign gchild_url = '/products/original-adivasi-hakki-pikki-hair-oil' -%}
+                              {%- endif -%}
+                              <li>
+                                <a
+                                  id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                  href="{{ gchild_url }}"
+                                  class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"
+                                  {% if grandchildlink.current %}
+                                    aria-current="page"
+                                  {% endif %}
+                                >
+                                  {{ grandchildlink.title | escape }}
+                                </a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        </details>
+                      {%- endif -%}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </details>
+            </header-menu>
+          {%- else -%}
+            <a
+              id="HeaderMenu-{{ link.handle }}"
+              href="{{ dest_url }}"
+              class="header__menu-item list-menu__item link link--text focus-inset adivasi-nav__link"
+              {% if link.current %}
+                aria-current="page"
               {% endif %}
             >
-              {{- link.title | escape -}}
-            </span>
-          </a>
-        {%- endif -%}
+              <span
+                {%- if link.current %}
+                  class="header__active-menu-item"
+                {% endif %}
+              >
+                {{- link.title | escape -}}
+              </span>
+              {%- if link.title contains 'Oil' or link.title contains 'Shop' or link.title contains 'Catalog' -%}
+                <span class="adivasi-nav__pill">50% OFF</span>
+              {%- endif -%}
+            </a>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    {%- else -%}
+      <!-- Premium Fallback Navigation Menu -->
+      <li>
+        <a href="/" class="header__menu-item list-menu__item link link--text focus-inset adivasi-nav__link">
+          <span>Home</span>
+        </a>
       </li>
-    {%- endfor -%}
+      <li>
+        <a href="/products/original-adivasi-hakki-pikki-hair-oil" class="header__menu-item list-menu__item link link--text focus-inset adivasi-nav__link is-featured">
+          <span>🌿 Shop Hair Oil</span>
+          <span class="adivasi-nav__pill">HOT</span>
+        </a>
+      </li>
+      <li>
+        <a href="/pages/how-to-use" class="header__menu-item list-menu__item link link--text focus-inset adivasi-nav__link">
+          <span>How To Use</span>
+        </a>
+      </li>
+      <li>
+        <a href="/#herbs-spotlight" class="header__menu-item list-menu__item link link--text focus-inset adivasi-nav__link">
+          <span>108 Wild Herbs</span>
+        </a>
+      </li>
+      <li>
+        <a href="/#heritage-story" class="header__menu-item list-menu__item link link--text focus-inset adivasi-nav__link">
+          <span>Tribal Heritage</span>
+        </a>
+      </li>
+      <li>
+        <a href="/#real-vs-fake" class="header__menu-item list-menu__item link link--text focus-inset adivasi-nav__link">
+          <span>Real vs Fake</span>
+        </a>
+      </li>
+      <li>
+        <a href="/pages/contact" class="header__menu-item list-menu__item link link--text focus-inset adivasi-nav__link">
+          <span>Helpline &amp; Contact</span>
+        </a>
+      </li>
+    {%- endif -%}
   </ul>
 </nav>
+
+<style>
+  /* Refined Header Menu Styling & Typography */
+  .adivasi-nav .list-menu--inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .adivasi-nav__link {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.6px !important;
+    text-transform: uppercase !important;
+    padding: 8px 14px !important;
+    border-radius: 6px !important;
+    color: #ffffff !important;
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    position: relative;
+  }
+
+  .adivasi-nav__link span {
+    transition: color 0.2s ease;
+  }
+
+  .adivasi-nav__link:hover {
+    color: #f6cb59 !important;
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+  }
+
+  .adivasi-nav__link:hover span {
+    color: #f6cb59 !important;
+    text-decoration: none !important;
+  }
+
+  .adivasi-nav__link.is-featured {
+    color: #f6cb59 !important;
+  }
+
+  /* Hot/Sale pill on nav item */
+  .adivasi-nav__pill {
+    background: #16a34a;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 10px;
+    letter-spacing: 0.4px;
+    line-height: 1;
+    box-shadow: 0 2px 6px rgba(22, 163, 74, 0.4);
+    animation: adivasiPulse 2s infinite ease-in-out;
+  }
+
+  @keyframes adivasiPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+
+  /* Submenu Styling */
+  .adivasi-nav__submenu {
+    background: #0a3a2f !important;
+    border: 1px solid rgba(197, 155, 39, 0.3) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35) !important;
+    padding: 10px 0 !important;
+    min-width: 220px !important;
+  }
+
+  .adivasi-nav__submenu .header__menu-item {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.3px !important;
+    text-transform: none !important;
+    color: #e2f0ec !important;
+    padding: 9px 18px !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .adivasi-nav__submenu .header__menu-item:hover {
+    background: rgba(197, 155, 39, 0.15) !important;
+    color: #f6cb59 !important;
+    padding-left: 22px !important;
+  }
+</style>

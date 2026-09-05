@@ -506,3 +506,76 @@
     }
   }
 }
+
+/* ===================================================
+   AYUSH ADIVASI PREMIUM FOOTER STYLING
+   =================================================== */
+.footer {
+  background: radial-gradient(circle at 50% 0%, #0d483b 0%, #0a3a2f 45%, #06221c 100%) !important;
+  color: #ffffff !important;
+  border-top: 2px solid rgba(197, 155, 39, 0.35) !important;
+}
+
+@media screen and (min-width: 990px) {
+  .footer__blocks-wrapper {
+    display: grid !important;
+    grid-template-columns: 1.35fr 0.95fr 1fr 1.2fr !important;
+    gap: 32px !important;
+  }
+}
+
+.footer-block__heading {
+  font-size: 14.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.8px !important;
+  text-transform: uppercase !important;
+  color: #f6cb59 !important;
+  margin-bottom: 16px !important;
+  position: relative !important;
+  display: inline-block !important;
+  padding-bottom: 6px !important;
+  border-bottom: 2px solid rgba(197, 155, 39, 0.4) !important;
+}
+
+.footer-block__details-content {
+  font-size: 13.5px !important;
+  line-height: 1.65 !important;
+  color: #e2f0ec !important;
+}
+
+.footer-block__details-content a {
+  color: #e2f0ec !important;
+  transition: all 0.22s ease !important;
+  text-decoration: none !important;
+}
+
+.footer-block__details-content a:hover {
+  color: #f6cb59 !important;
+  padding-left: 4px !important;
+}
+
+.footer-block__details-content li {
+  margin-bottom: 8px !important;
+}
+
+.footer__content-bottom {
+  border-top: 1px solid rgba(197, 155, 39, 0.2) !important;
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+
+.footer__copyright {
+  color: #c0ded6 !important;
+  font-size: 12px !important;
+}
+
+.footer__copyright a {
+  color: #f6cb59 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.footer__copyright a:hover {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
+

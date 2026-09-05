@@ -8,8 +8,8 @@
         "brand_text": {
           "type": "text",
           "settings": {
-            "heading": "Ayush Adivasi Hair Oil",
-            "subtext": "<p>100% Pure Ancestral Forest Herbs Brewed in Woodfire over 12 hours in Pakshirajapura, Mysore. Sealed with 3D Security Hologram.</p>"
+            "heading": "🌿 Ayush Adivasi Hair Oil",
+            "subtext": "<p>Authentic Hakki-Pikki tribal formula prepared with 108 sacred forest roots and herbs slow-cooked over open woodfire in Pakshirajapura, Mysore. Sealed with genuine 3D Security Hologram.</p><p style=\"margin-top:10px;\"><strong>Official Guarantee:</strong> ISO 9001:2015 &bull; Ayush Compliant &bull; 100% Herbal Roots &bull; No Mineral Oil</p>"
           }
         },
         "link_list": {
@@ -19,17 +19,25 @@
             "menu": "footer"
           }
         },
+        "policies_col": {
+          "type": "text",
+          "settings": {
+            "heading": "Customer Care & Trust",
+            "subtext": "<ul style=\"list-style:none;padding:0;margin:0;line-height:2.2;\"><li><a href=\"/products/original-adivasi-hakki-pikki-hair-oil\" style=\"color:#f6cb59;text-decoration:none;font-weight:700;\">📦 Order Cash On Delivery (COD)</a></li><li><a href=\"/pages/how-to-use\" style=\"color:#ffffff;text-decoration:none;\">📖 How To Use (Tribal Ritual)</a></li><li><a href=\"/pages/refund-policy\" style=\"color:#ffffff;text-decoration:none;\">🔄 7-Day Easy Replacement</a></li><li><a href=\"/pages/privacy-policy\" style=\"color:#ffffff;text-decoration:none;\">🔒 Privacy Policy</a></li><li><a href=\"/pages/terms-and-conditions\" style=\"color:#ffffff;text-decoration:none;\">📜 Terms &amp; Conditions</a></li></ul>"
+          }
+        },
         "contact_info": {
           "type": "text",
           "settings": {
             "heading": "Pakshirajapura Origin",
-            "subtext": "<p>Main Road, Pakshirajapura, Hunsur Taluk, Mysore District, Karnataka - 571105<br>WhatsApp: +91 98800 00000<br>Cash On Delivery Available India-Wide</p>"
+            "subtext": "<p style=\"font-size:13px;line-height:1.6;color:#e2f0ec;margin:0 0 10px;\">📍 <strong>Sanctuary:</strong> 2nd Pakshirajapura, Tiger Reserve Belt, Hunsur Taluk, Mysore, Karnataka - 571105</p><p style=\"font-size:13px;line-height:1.6;color:#e2f0ec;margin:0 0 12px;\">✉️ <strong>Support Email:</strong> support@origginaladivasioil.in<br>⏰ <strong>Dispatch:</strong> Mon - Sat (9 AM - 7 PM IST)</p><p><a href=\"https://wa.me/919880000000?text=Hello%20Ayush%20Adivasi,%20I%20want%20to%20order%20Original%20Hair%20Oil%20COD\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-flex;align-items:center;gap:6px;background:#16a34a;color:#ffffff;padding:8px 14px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:700;\">💬 WhatsApp Helpline</a></p>"
           }
         }
       },
       "block_order": [
         "brand_text",
         "link_list",
+        "policies_col",
         "contact_info"
       ],
       "settings": {
@@ -43,8 +51,8 @@
         "payment_enable": true,
         "show_policy": true,
         "margin_top": 0,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     }
   },

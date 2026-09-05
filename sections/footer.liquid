@@ -87,18 +87,31 @@
                       {{ block.settings.subtext }}
                     </div>
                   {%- when 'link_list' -%}
-                    {%- if block.settings.menu != blank -%}
+                    {%- if block.settings.menu != blank and block.settings.menu.links.size > 0 -%}
                       <ul class="footer-block__details-content list-unstyled">
                         {%- for link in block.settings.menu.links -%}
+                          {%- assign f_url = link.url -%}
+                          {%- if f_url contains '/collections/all' or f_url == '#' -%}
+                            {%- assign f_url = '/products/original-adivasi-hakki-pikki-hair-oil' -%}
+                          {%- endif -%}
                           <li>
                             <a
-                              href="{{ link.url }}"
+                              href="{{ f_url }}"
                               class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
                             >
                               {{ link.title | escape }}
                             </a>
                           </li>
                         {%- endfor -%}
+                      </ul>
+                    {%- else -%}
+                      <ul class="footer-block__details-content list-unstyled">
+                        <li><a href="/" class="link link--text list-menu__item list-menu__item--link">Home</a></li>
+                        <li><a href="/products/original-adivasi-hakki-pikki-hair-oil" class="link link--text list-menu__item list-menu__item--link" style="color: #f6cb59; font-weight: 700;">🌿 Shop Hair Oil (50% OFF)</a></li>
+                        <li><a href="/pages/how-to-use" class="link link--text list-menu__item list-menu__item--link">How To Use Ritual</a></li>
+                        <li><a href="/#herbs-spotlight" class="link link--text list-menu__item list-menu__item--link">108 Sacred Herbs</a></li>
+                        <li><a href="/#heritage-story" class="link link--text list-menu__item list-menu__item--link">Pakshirajapura Origin</a></li>
+                        <li><a href="/#real-vs-fake" class="link link--text list-menu__item list-menu__item--link">Real vs Fake Hologram</a></li>
                       </ul>
                     {%- endif -%}
                   {%- when 'brand_information' -%}
@@ -302,18 +315,25 @@
         <small class="copyright__content"
           >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
         </small>
-        <small class="copyright__content">{{ powered_by_link }}</small>
+        <small class="copyright__content"> &bull; Authentic Pakshirajapura Tribal Sanctuary Formulation</small>
         {%- if section.settings.show_policy -%}
           <ul class="policies list-unstyled">
-            {%- for policy in shop.policies -%}
-              {%- if policy != blank -%}
-                <li>
-                  <small class="copyright__content"
-                    ><a href="{{ policy.url }}">{{ policy.title | escape }}</a></small
-                  >
-                </li>
-              {%- endif -%}
-            {%- endfor -%}
+            {%- if shop.policies.size > 0 -%}
+              {%- for policy in shop.policies -%}
+                {%- if policy != blank -%}
+                  <li>
+                    <small class="copyright__content"
+                      ><a href="{{ policy.url }}">{{ policy.title | escape }}</a></small
+                    >
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            {%- else -%}
+              <li><small class="copyright__content"><a href="/pages/privacy-policy">Privacy Policy</a></small></li>
+              <li><small class="copyright__content"><a href="/pages/terms-and-conditions">Terms of Service</a></small></li>
+              <li><small class="copyright__content"><a href="/pages/refund-policy">7-Day Replacement Policy</a></small></li>
+              <li><small class="copyright__content"><a href="/pages/contact">Contact Support</a></small></li>
+            {%- endif -%}
           </ul>
         {%- endif -%}
       </div>
