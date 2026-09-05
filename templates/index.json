@@ -1,18 +1,94 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero_banner": {
       "type": "adivasi-hero-banner",
       "settings": {
-        "banner_image_url": "https://cdn.shopify.com/s/files/1/0835/1957/0173/files/WhatsAppImage2024-04-23at5.10.00PM_2_1.jpg?v=1786266995",
-        "bg_color": "#0A3A2F",
+        "bg_color": "#0a3a2f",
         "badge_text": "100% ORIGINAL PAKSHIRAJAPURA AYUSH HERBAL",
-        "product_image": "https://cdn.shopify.com/s/files/1/0835/1957/0173/files/An_XIlT9GYEXOrEVOq3PF0ydGYR9eaupCWugOJI8gGmd1OhevHB-OrHouCNL-gafyvsAVaj9VG9mwnizFqctWrDETFe8NaN4gYw7v5ahQ0a81f2cHvCQ3FVO3hz22eGZ4qerfJtQpcuQbfLVm9QAoKyKlpTQMajGwp88tBQTlNKiSvYykQjL37T.webp?v=1786266995",
-        "cta_link": "/products/original-adivasi-hakki-pikki-hair-oil"
+        "heading": "Stop Hair Fall in 14 Days With Ancestral 108 Wild Forest Herbs",
+        "subheading": "Hand-harvested in Western Ghats by our tribal elders & slow woodfire brewed for 12 hours. Experience genuine Ayurvedic hair regrowth without chemicals.",
+        "cta_link": "/products/original-adivasi-hakki-pikki-hair-oil",
+        "secondary_cta_link": "shopify://collections/all"
       }
     },
-    "featured_product": {
-      "type": "adivasi-featured-product",
-      "settings": {}
+    "featured_product_RwKxe7": {
+      "type": "featured-product",
+      "blocks": {
+        "text_MjHp8k": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_MqAzEU": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_byh8i3": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_PDbPdj": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_JMJbtj": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_WhkF4h": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_PwAf3P": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_MjHp8k",
+        "title_MqAzEU",
+        "price_byh8i3",
+        "variant_picker_PDbPdj",
+        "quantity_selector_JMJbtj",
+        "buy_buttons_WhkF4h",
+        "share_PwAf3P"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "original-adivasi-hakki-pikki-hair-oil",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     },
     "heritage_story": {
       "type": "adivasi-heritage-story",
@@ -21,35 +97,35 @@
     "ingredients_spotlight": {
       "type": "adivasi-ingredients-spotlight",
       "settings": {
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "cta_link": "/products/original-adivasi-hakki-pikki-hair-oil"
       }
     },
     "herbal_process": {
       "type": "adivasi-herbal-process",
       "settings": {
-        "bg_color": "#FBF9F4",
+        "bg_color": "#fbf9f4",
         "cta_link": "/products/original-adivasi-hakki-pikki-hair-oil"
       }
     },
     "customer_reels": {
       "type": "adivasi-video-reels",
       "settings": {
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "cta_link": "/products/original-adivasi-hakki-pikki-hair-oil"
       }
     },
     "faq_accordion": {
       "type": "adivasi-faq-accordion",
       "settings": {
-        "bg_color": "#FBF9F4",
+        "bg_color": "#fbf9f4",
         "cta_link": "/products/original-adivasi-hakki-pikki-hair-oil"
       }
     }
   },
   "order": [
     "hero_banner",
-    "featured_product",
+    "featured_product_RwKxe7",
     "heritage_story",
     "ingredients_spotlight",
     "herbal_process",
