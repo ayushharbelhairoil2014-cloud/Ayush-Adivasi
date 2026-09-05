@@ -3,12 +3,16 @@
   Features authentic bottle photography, Pakshirajapura heritage badge, real ratings, and direct 1-Click COD action.
 {% endcomment %}
 
-{%- assign bg_banner_url = 'adivasi-hero-bg.jpg' | asset_url -%}
-{%- if section.settings.banner_image != blank -%}
+{%- assign default_banner_cdn = 'https://cdn.shopify.com/s/files/1/0835/1957/0173/files/WhatsAppImage2024-04-23at5.10.00PM_2_1.jpg?v=1786266995' -%}
+{%- assign bg_banner_url = section.settings.banner_image_url -%}
+{%- if bg_banner_url == blank and section.settings.banner_image != blank -%}
   {%- assign bg_banner_url = section.settings.banner_image | image_url: width: 2400 -%}
 {%- endif -%}
+{%- if bg_banner_url == blank -%}
+  {%- assign bg_banner_url = default_banner_cdn -%}
+{%- endif -%}
 
-<div class="adivasi-hero section-{{ section.id }}-padding" style="--hero-bg-url: url('{{ bg_banner_url }}');">
+<div class="adivasi-hero section-{{ section.id }}-padding" style="background-image: linear-gradient(180deg, rgba(6, 38, 31, 0.84) 0%, rgba(10, 58, 47, 0.88) 50%, rgba(6, 38, 31, 0.95) 100%), url('{{ bg_banner_url }}');">
   <div class="adivasi-hero__backdrop-overlay"></div>
   <div class="adivasi-hero__container page-width">
     <div class="adivasi-hero__grid">
@@ -542,6 +546,12 @@
 {
   "name": "Adivasi Hero Banner",
   "settings": [
+    {
+      "type": "text",
+      "id": "banner_image_url",
+      "label": "Banner Image CDN URL (Recommended)",
+      "default": "https://cdn.shopify.com/s/files/1/0835/1957/0173/files/WhatsAppImage2024-04-23at5.10.00PM_2_1.jpg?v=1786266995"
+    },
     {
       "type": "image_picker",
       "id": "banner_image",

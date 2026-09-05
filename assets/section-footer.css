@@ -511,21 +511,62 @@
    AYUSH ADIVASI PREMIUM FOOTER STYLING
    =================================================== */
 .footer {
+  position: relative;
   background: radial-gradient(circle at 50% 0%, #0d483b 0%, #0a3a2f 45%, #06221c 100%) !important;
   color: #ffffff !important;
   border-top: 2px solid rgba(197, 155, 39, 0.35) !important;
+  z-index: 1;
 }
 
-@media screen and (min-width: 990px) {
-  .footer__blocks-wrapper {
-    display: grid !important;
-    grid-template-columns: 1.35fr 0.95fr 1fr 1.2fr !important;
-    gap: 32px !important;
+.footer__content-top {
+  padding-top: 48px !important;
+  padding-bottom: 40px !important;
+}
+
+/* Dedicated, robust 4-column grid that never squishes or wraps single words */
+.adivasi-footer__grid,
+.footer__blocks-wrapper.adivasi-footer__grid {
+  display: grid !important;
+  grid-template-columns: 1.35fr 0.95fr 1fr 1.25fr !important;
+  gap: 36px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+@media screen and (max-width: 989px) {
+  .adivasi-footer__grid,
+  .footer__blocks-wrapper.adivasi-footer__grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px !important;
   }
 }
 
+@media screen and (max-width: 640px) {
+  .adivasi-footer__grid,
+  .footer__blocks-wrapper.adivasi-footer__grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}
+
+/* Individual column sizing - override any Dawn grid__item math */
+.adivasi-footer__col,
+.footer-block.adivasi-footer__col,
+.footer__blocks-wrapper .footer-block,
+.footer__blocks-wrapper .grid__item {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  flex: 1 1 0 !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .footer-block__heading {
-  font-size: 14.5px !important;
+  font-size: 15px !important;
   font-weight: 800 !important;
   letter-spacing: 0.8px !important;
   text-transform: uppercase !important;
@@ -539,7 +580,7 @@
 
 .footer-block__details-content {
   font-size: 13.5px !important;
-  line-height: 1.65 !important;
+  line-height: 1.7 !important;
   color: #e2f0ec !important;
 }
 
@@ -555,17 +596,18 @@
 }
 
 .footer-block__details-content li {
-  margin-bottom: 8px !important;
+  margin-bottom: 10px !important;
 }
 
 .footer__content-bottom {
   border-top: 1px solid rgba(197, 155, 39, 0.2) !important;
-  background: rgba(0, 0, 0, 0.2) !important;
+  background: rgba(0, 0, 0, 0.25) !important;
+  padding: 24px 0 !important;
 }
 
 .footer__copyright {
   color: #c0ded6 !important;
-  font-size: 12px !important;
+  font-size: 12.5px !important;
 }
 
 .footer__copyright a {
