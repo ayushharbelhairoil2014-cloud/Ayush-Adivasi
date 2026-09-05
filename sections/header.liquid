@@ -102,12 +102,96 @@
 
 {%- style -%}
   .header {
-    padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 3rem {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 3rem;
+    padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 1.6rem {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 1.6rem;
   }
 
-  .section-header {
-    position: sticky; /* This is for fixing a Safari z-index issue. PR #2147 */
+  .section-header,
+  .header-wrapper,
+  sticky-header {
+    position: relative !important;
+    top: auto !important;
     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  /* Mobile Header Precision Alignment (No overlap, perfect 3-column layout) */
+  @media screen and (max-width: 749px) {
+    .header {
+      display: grid !important;
+      grid-template-areas: 'left-icons heading icons' !important;
+      grid-template-columns: 48px 1fr 96px !important;
+      align-items: center !important;
+      padding: 8px 12px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    header-drawer {
+      grid-area: left-icons !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      margin-left: 0 !important;
+      width: 48px !important;
+      height: 48px !important;
+      z-index: 5 !important;
+    }
+
+    header-drawer .header__icon--menu {
+      width: 44px !important;
+      height: 44px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      cursor: pointer !important;
+    }
+
+    .header__heading {
+      grid-area: heading !important;
+      text-align: center !important;
+      margin: 0 auto !important;
+      justify-self: center !important;
+      width: 100% !important;
+      overflow: hidden !important;
+    }
+
+    .header__heading-link {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      padding: 0 !important;
+      max-width: 100% !important;
+    }
+
+    .header__heading-link .h2 {
+      font-size: 1.6rem !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.5px !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+
+    .header__icons {
+      grid-area: icons !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      gap: 4px !important;
+      width: auto !important;
+      padding-right: 0 !important;
+      margin: 0 !important;
+    }
+
+    .header__icon {
+      width: 44px !important;
+      height: 44px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
   }
 
   @media screen and (min-width: 750px) {
@@ -167,18 +251,19 @@
   <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if country_selector or language_selector %} header--has-localizations{% endif %}">
     {%- liquid
       assign render_search_left = false
-      if section.settings.logo_position == 'top-center' or section.settings.menu == blank or shop.customer_accounts_enabled
+      if section.settings.logo_position == 'top-center' or section.settings.menu == blank
         assign render_search_left = true
       endif
 
       if section.settings.menu != blank
         render 'header-drawer', show_country_selector: country_selector, show_language_selector: language_selector, show_social_links: social_links
       endif
-
-      if render_search_left
-        render 'header-search', input_id: 'Search-In-Modal-1'
-      endif
     -%}
+    {%- if render_search_left -%}
+      <div class="small-hide medium-hide">
+        {% render 'header-search', input_id: 'Search-In-Modal-1' %}
+      </div>
+    {%- endif -%}
 
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
@@ -285,7 +370,7 @@
       {%- if shop.customer_accounts_enabled -%}
         <shopify-account
           menu="{{ settings.customer_account_menu | default: 'customer-account-main-menu' }}"
-          class="header__icon header__icon--account link focus-inset"
+          class="header__icon header__icon--account link focus-inset small-hide"
         >
           <span slot="signed-out-avatar" class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
           <span slot="signed-out-avatar" class="visually-hidden">{{ 'customer.log_in' | t }}</span>

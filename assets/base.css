@@ -3762,3 +3762,122 @@ details-disclosure > details {
   color: #ffffff !important;
 }
 
+/* ========================================================
+   STICKY HEADER REMOVAL (NATURAL SCROLLING)
+   ======================================================== */
+.section-header,
+.header-wrapper,
+sticky-header,
+.shopify-section-header-sticky {
+  position: relative !important;
+  top: auto !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ========================================================
+   MOBILE HEADER PRECISION ALIGNMENT
+   ======================================================== */
+@media screen and (max-width: 749px) {
+  .header {
+    display: grid !important;
+    grid-template-areas: 'left-icons heading icons' !important;
+    grid-template-columns: 48px 1fr 96px !important;
+    align-items: center !important;
+    padding: 6px 12px !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  header-drawer {
+    grid-area: left-icons !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    margin: 0 !important;
+    width: 48px !important;
+    height: 48px !important;
+    z-index: 10 !important;
+  }
+
+  header-drawer .header__icon--menu {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .header__heading {
+    grid-area: heading !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    justify-self: center !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .header__heading-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  .header__heading-link .h2 {
+    font-size: 1.6rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .header__icons {
+    grid-area: icons !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 4px !important;
+    width: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .header__icon {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Product page mobile button alignment */
+  .product-form__buttons {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 16px 0 !important;
+    align-items: stretch !important;
+  }
+
+  .product-form__submit,
+  .shopify-payment-button,
+  .shopify-payment-button__button,
+  .shopify-payment-button__button--unbranded,
+  .shopify-payment-button [role="button"] {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+
+
