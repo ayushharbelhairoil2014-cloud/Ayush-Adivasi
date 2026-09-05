@@ -18,6 +18,124 @@
   {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
 {% endif %}
 
+<style>
+  /* ===================================================
+     AYUSH ADIVASI PREMIUM ANNOUNCEMENT BAR
+     =================================================== */
+  .utility-bar {
+    background: linear-gradient(90deg, #06261f 0%, #0a3a2f 35%, #0d4639 50%, #0a3a2f 65%, #06261f 100%) !important;
+    border-bottom: 2px solid #c59b27 !important;
+    padding: 8px 0 !important;
+    position: relative;
+    z-index: 5;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+  }
+
+  .announcement-bar__message {
+    color: #ffffff !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.6px !important;
+    text-transform: uppercase !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 0 10px !important;
+    line-height: 1.4 !important;
+  }
+
+  .announcement-bar__message span {
+    color: #ffffff !important;
+    transition: color 0.2s ease;
+  }
+
+  .announcement-bar__link {
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: transform 0.2s ease !important;
+  }
+
+  .announcement-bar__link:hover {
+    transform: scale(1.015);
+  }
+
+  .announcement-bar__link:hover .announcement-bar__message span {
+    color: #f6cb59 !important;
+    text-shadow: 0 0 10px rgba(246, 203, 89, 0.5);
+  }
+
+  .announcement-bar-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .announcement-bar-slider .slider-button {
+    background: rgba(197, 155, 39, 0.25) !important;
+    border: 1px solid rgba(197, 155, 39, 0.5) !important;
+    color: #f6cb59 !important;
+    border-radius: 50% !important;
+    width: 28px !important;
+    height: 28px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    padding: 0 !important;
+  }
+
+  .announcement-bar-slider .slider-button:hover {
+    background: #c59b27 !important;
+    color: #0a3a2f !important;
+    transform: scale(1.1);
+  }
+
+  .announcement-bar-slider .slider-button .svg-wrapper {
+    width: 14px;
+    height: 14px;
+    color: #f6cb59;
+  }
+
+  .announcement-bar-slider .slider-button:hover .svg-wrapper {
+    color: #0a3a2f;
+  }
+
+  .announcement-bar__link .svg-wrapper {
+    width: 14px;
+    height: 14px;
+    color: #f6cb59 !important;
+    margin-left: 6px;
+    transition: transform 0.2s ease;
+  }
+
+  .announcement-bar__link:hover .svg-wrapper {
+    transform: translateX(4px);
+  }
+
+  @media screen and (max-width: 749px) {
+    .utility-bar {
+      padding: 6px 0 !important;
+    }
+    .announcement-bar__message {
+      font-size: 11.5px !important;
+      letter-spacing: 0.3px !important;
+      padding: 0 4px !important;
+    }
+    .announcement-bar-slider .slider-button {
+      width: 22px !important;
+      height: 22px !important;
+    }
+  }
+</style>
+
 <div
   class="utility-bar color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator and section.blocks.size > 0 %} utility-bar--bottom-border{% elsif section.settings.show_line_separator and section.settings.show_social and social_icons%} utility-bar--bottom-border-social-only{% endif %}{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header-localization{% endif %}"
 >
