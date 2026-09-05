@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -23,6 +32,12 @@
           "settings": {
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": false
+          }
+        },
+        "easysell_cod_form_app_block_6jYWjF": {
+          "type": "shopify://apps/easysell-cod-form/blocks/app-block/7bfd0a95-6839-4f02-b2ee-896832dbe67e",
+          "settings": {
+            "product": ""
           }
         },
         "trust_badges": {
@@ -71,6 +86,7 @@
         "price",
         "variant_picker",
         "buy_buttons",
+        "easysell_cod_form_app_block_6jYWjF",
         "trust_badges",
         "description",
         "rich_tabs",
@@ -85,9 +101,9 @@
         "constrain_to_viewport": true,
         "media_fit": "cover",
         "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
         "media_position": "left",
         "image_zoom": "lightbox",
-        "mobile_thumbnails": "show",
         "hide_variants": false,
         "enable_video_looping": true,
         "padding_top": 28,
